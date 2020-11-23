@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="UTF-8">
+    <title>欢迎页面-X-admin2.0</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/xadmin.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <script src="js/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="./js/xadmin.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/laydate.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="./lib/layui/layui.js" charset="utf-8"></script>
+  </head>
+  
+  <body style="background: url(./images/bg.png);">
+   <div class="x-nav">
+      <span class="layui-breadcrumb">
+        <a href="">首页</a>
+        <a href="">窗口分览</a>
+        <a href="">林间小聚</a>
+        <a>
+          <cite>麻辣香锅</cite></a>
+      </span>
+      <!-- 搜索日期框 -->
+      <input type="text" placeholder="请选择查看日期" id="test" style="height: 30px;margin-left: 10px" readonly>
+      <button type="button" class="btn btn-primary btn-sm" id="find">查询</button>
+    </div>
+    <!-- 图表容器 -->
+    <div class="layui-fluid">
+        <div class="layui-row">
+           <div class="layui-col-md12 layui-col-sm12 layui-col-xs12 ">
+                <div id="main" style="width: 100%;height: 500px"></div>
+           </div>
+            <div class="layui-col-md12 layui-col-sm12 layui-col-xs12 ">
+                <div id="main2" style="width: 100%;height: 500px;margin-top: 50px"></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+         //获取日期查询数据库改变图像
+           $("#find").click(function(){
+               var time = new Date($("#test").val());
+               time = time.getTime()/1000-28800;
+               //日期不在2020年8.9月提示
+               if (time<1596729600 || time>1622390400){
+                   alert("暂无该时间数据，请确认查询日期在2020.8.7-2021.5.31号内！！！");
+               }else{
+                    getData(time)
+               }//end else                
+           });
+       
+           //默认访问当天0时
+            $(function() { 
+               var time = new Date(new Date().toLocaleDateString()).getTime()/1000;
+               getData(time);
+            });
+
+            function getData(time){
+              var myChart = echarts.init(document.getElementById('main'));
+                var myChart2 = echarts.init(document.getElementById('main2'));
+                //数据接收数组
+                var name=new Array(10);
+                var num=new Array(10);
+                myChart.showLoading();
+                $.ajax({
+                   type:"GET",
+                   async:false,
+                   url:"http://47.98.145.221/getFoodHot", 
+                   data:{ date:time,canteen:2,window:7 },
+                   success:function(data){
+                   day=timestampToTime(time);
+                   for(var i=0;i<data.length;i++){
+                      name[i]=data[i]['mName'];
+                      num[i]=data[i]['cNum'];
+                   }
+                   option = {
+                      title:{
+                          text:day+"销售TOP10",
+                          left: 'center',
+                           textStyle:{
+                               //文字颜色
+                               color:'#4169E1',
+                               //字体风格,'normal','italic','oblique'
+                               fontStyle:'italic',
+                               //字体粗细 'normal','bold','bolder','lighter',100 | 200 | 300 | 400...
+                               fontWeight:'bold',
+                               //字体系列
+                               fontFamily:'sans-serif',
+                               //字体大小
+                       　　　　 fontSize:16
+                           }
+                      },
+                      color: ['#3398DB'],
+                      tooltip: {
+                          trigger: 'axis',
+                          axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                              type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                          }
+                      },
+                      grid: {
+                          left: '3%',
+                          right: '4%',
+                          bottom: '3%',
+                          containLabel: true
+                      },
+                      xAxis: [
+                          {
+                              type: 'category',
+                              data: [name[0],name[1],name[2],name[3],name[4],
+                              name[5],name[6],name[7],name[8],name[9]],
+                              axisTick: {
+                                  alignWithLabel: true
+                              }
+                          }
+                      ],
+                      yAxis: [
+                          {
+                              type: 'value'
+                          }
+                      ],
+                      series: [
+                          {
+                              name: '销售量',
+                              type: 'bar',
+                              barWidth: '60%',
+                              data: [num[0],num[1],num[2],num[3],num[4],
+                              num[5],num[6],num[7],num[8],num[9]],
+                              itemStyle:{
+                                  normal:{
+                                    color: function(params) {
+                                      //注意，如果颜色太少的话，后面颜色不会自动循环，最好多定义几个颜色
+                                        var colorList = ['#CC0033','#99CC00','#003399','#CC0033','#99CC00','#003399','#CC0033','#99CC00','#003399','#CC0033'];
+                                        return colorList[params.dataIndex]
+                                    }
+                                  }
+                              },
+                              label: {
+                                normal: {
+                                    show: true,
+                                    position: 'top'
+                                }
+                            }
+                          }
+                      ]
+                  };
+
+                   myChart.hideLoading();
+                   // 使用刚指定的配置项和数据显示图表。
+                   myChart.setOption(option);
+                   //根据浏览器大小改变大小
+                   // window.onresize =myChart.resize();
+                   
+                }//end func(data)
+
+              });//end ajax
+
+                //请求参数拼凑
+                var namesParam=name[0]+","+name[1]+","+name[2];
+                //第二个图表
+                myChart2.showLoading();
+                $.ajax({
+                   type:"GET",
+                   async:false,
+                   url:"http://47.98.145.221/getFoodHotWeek", 
+                   data:{ date:time,canteen:2,window:7,names:namesParam },
+                   success:function(result){
+                      var t=86400;
+                      //计算横坐标
+                      xday1=timestampToTime(time);
+                      xday2=timestampToTime(time-t);
+                      xday3=timestampToTime(time-2*t);
+                      xday4=timestampToTime(time-3*t);
+                      xday5=timestampToTime(time-4*t);
+                      xday6=timestampToTime(time-5*t);
+                      xday7=timestampToTime(time-6*t);
+                      //echarts数据生成
+                      var posList = [
+                          'left', 'right', 'top', 'bottom',
+                          'inside',
+                          'insideTop', 'insideLeft', 'insideRight', 'insideBottom',
+                          'insideTopLeft', 'insideTopRight', 'insideBottomLeft', 'insideBottomRight'
+                      ];
+
+                      var labelOption = {
+                          show: true,
+                          rotate:90,
+                          position: 'insideBottom', //有位置才能设置distance
+                          distance: 50, //离横坐标距离
+                          formatter: '{c}  {name|{a}}',
+                          fontSize: 16,
+                          rich: {
+                              name: {
+                                  textBorderColor: '#fff'
+                              }
+                          }
+                      };
+
+                      option = {
+                          title:{
+                              text:xday1+"销售TOP3前一周变化",
+                              left: 'left',
+                              textStyle:{
+                                   //文字颜色
+                                   color:'#4169E1',
+                                   //字体风格,'normal','italic','oblique'
+                                   fontStyle:'italic',
+                                   //字体粗细 'normal','bold','bolder','lighter',100 | 200 | 300 | 400...
+                                   fontWeight:'bold',
+                                   //字体系列
+                                   fontFamily:'sans-serif',
+                                   //字体大小
+                           　　　　 fontSize:16
+                               }
+                          },
+                          grid: {
+                              left: '3%',
+                              right: '4%',
+                              bottom: '1%',
+                              containLabel: true
+                          },
+                          color: ['#CC0033','#99CC00','#003399'],
+                          tooltip: {
+                              trigger: 'axis',
+                              axisPointer: {
+                                  type: 'shadow'
+                              }
+                          },
+                          legend: {
+                              data: [name[0],name[1],name[2]]
+                          },
+                          toolbox: {
+                              show: true,
+                              orient: 'vertical',
+                              left: 'right',
+                              top: 'center',
+                              feature: {
+                                  mark: {show: true},
+                                  dataView: {show: true, readOnly: false},
+                                  magicType: {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+                                  restore: {show: true},
+                                  saveAsImage: {show: true}
+                              }
+                          },
+                          xAxis: [
+                              {
+                                  type: 'category',
+                                  axisTick: {show: false},
+                                  data: [xday7,xday6,xday5,xday4,xday3,xday2,xday1]
+                              }
+                          ],
+                          yAxis: [
+                              {
+                                  type: 'value'
+                              }
+                          ],
+                          series: [
+                              {
+                                  name: name[0],
+                                  type: 'bar',
+                                  label: labelOption,
+                                  data: [result[time-6*t][name[0]],result[time-5*t][name[0]],
+              result[time-4*t][name[0]],result[time-3*t][name[0]],result[time-2*t][name[0]],
+              result[time-t][name[0]],result[time][name[0]]]
+                              },
+                              {
+                                  name: name[1],
+                                  type: 'bar',
+                                  label: labelOption,
+                                  data: [result[time-6*t][name[1]],result[time-5*t][name[1]],
+              result[time-4*t][name[1]],result[time-3*t][name[1]],result[time-2*t][name[1]],
+              result[time-t][name[1]],result[time][name[1]]]
+                              },
+                              {
+                                  name: name[2],
+                                  type: 'bar',
+                                  label: labelOption,
+                                  data: [result[time-6*t][name[2]],result[time-5*t][name[2]],
+              result[time-4*t][name[2]],result[time-3*t][name[2]],result[time-2*t][name[2]],
+              result[time-t][name[2]],result[time][name[2]]]
+                              }
+                          ]
+                      };
+                      myChart2.hideLoading();
+                      myChart2.setOption(option);
+                   }//end func(data)
+
+                });//end ajax
+
+            }//end func
+            
+            //时间戳转换为2020-9-23
+            function timestampToTime(timestamp) {
+               //时间戳为10位需*1000，时间戳为13位的话不需乘1000
+               var date = new Date(timestamp * 1000);
+               Y = date.getFullYear() + '-';
+               M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+               D = date.getDate();
+               return Y+M+D;
+            }
+    </script>
+    <!-- 时间控件 -->
+    <script>
+        //执行一个laydate实例
+        laydate.render({
+          elem: '#test' //指定元素
+        });
+    </script>
+   
+  </body>
+
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="css/index.css"  />
+    <script src="js/laydate.js"></script>
+    <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+</head>
+
+<body>
+<!-- 背景图片 -->
+<div class="mainbody middle">
+
+    <form class="form-box front">
+        <h2 class="font">cqucc login</h2>
+            <div>
+                <input class="input-normal" type="text" placeholder="UserAccount" id="loginUsr" />
+                <input class="input-normal" type="password" placeholder="PassWord" id="loginPass" />
+
+                <input class="input-code" placeholder="Code" id="loginCode" />
+                <img class="show-code" id="codeImg"  src="">
+                <button class="btn-submit" type="button" id="index">
+                    login
+                </button>
+
+            </div>
+
+            <div>
+                <p style="margin-top: 40px">If you don't have account.Please</p>
+                <p>Click here to <a id="signup">regist</a></p>
+
+                <script type="text/javascript">
+                    // 点击sigup触发翻转样式
+                    $("#signup").click(function() {
+                        $(".middle").toggleClass("middle-flip");
+                    });
+                </script>
+
+            </div>
+    </form>
+
+    <!-- 上下两个表单，一个front，一个back -->
+    <form class="form-box back" id="registForm">
+
+        <div>
+            <input class="input-normal" type="text" placeholder="UserAccount" id="usr" />
+            <input class="input-normal" type="password" placeholder="PassWord" id="pass" />
+            <input class="input-normal" type="password" placeholder="RePassWord" id="rePass" />
+            <input class="input-normal" type="email" placeholder="Email" id="eml" />
+            <input class="input-normal" placeholder="Birthday" id="test" readonly/>
+            <input class="input-normal" placeholder="Address" id="address" />
+            <button class="btn-submit" type="button" id="regist">
+                regist
+            </button>
+        </div>
+
+        <div>
+            <p style="margin-top: 40px">Have a account ? You can</p>
+            <p>Click here to <a id="login">login</a></p>
+
+            <script type="text/javascript">
+                // 点击login触发翻转样式
+                $("#login").click(function() {
+                    $(".middle").toggleClass("middle-flip");
+                });
+            </script>
+        </div>
+    </form>
+
+</div>
+
+<script>
+    $(function(){
+        $.ajax({
+            type:"GET",
+            async:false,
+            url:"http://47.98.145.221/getImg",
+            // xhrFields: {
+            //     withCredentials: true
+            // },
+            // crossDomain: true,
+            success:function(data){
+                $("#codeImg").attr("src",data['url']);
+            }
+        });//end ajax
+    });
+
+    $('#codeImg').click(function(){
+        $.ajax({
+            type:"GET",
+            async:false,
+            url:"http://47.98.145.221/getImg",
+            // xhrFields: {
+            //     withCredentials: true
+            // },
+            // crossDomain: true,
+            success:function(data){
+                $("#codeImg").attr("src",data['url']);
+            }
+        });//end ajax
+    });
+
+    //注册
+    $('#regist').click(function(){
+        var username = $('#usr').val();
+        var pass = $('#pass').val();
+        var rePass = $('#rePass').val();
+        var email = $('#eml').val();
+        var day = $('#test').val();
+        var address = $('#address').val();
+        //转换为时间戳
+        time =new Date(day)/1000;
+
+        if (username.length==0 || pass.length==0 || rePass.length==0 || email.length==0 || day.length==0 || address.length==0){
+            alert("注册信息不能为空！！！");
+        }else{
+            if(pass != rePass){
+                alert("两次输入密码不一致！！！");
+            }else{
+                $.ajax({
+                    type:"GET",
+                    async:false,
+                    url:"http://47.98.145.221/regist",
+                    // xhrFields: {
+                    //     withCredentials: true
+                    // },
+                    // crossDomain: true,
+                    data:{UserName:username,PassWord:pass,Email:email,birthday:time,Address:address},
+                    success:function(data){
+                        if (data==0){
+                            alert("用户名已存在,请重新注册！！！");
+                            $('#registForm')[0].reset();
+                        }else{
+                            alert("注册成功！");
+                            window.location.href = "http://47.98.145.221/login.html";
+                        }
+                    }//end func(data)
+
+                });//end ajax
+
+            }//end else
+
+        }//end if
+
+    });
+
+    //登录
+    $('#index').click(function(){
+        var username = $('#loginUsr').val();
+        var pass = $('#loginPass').val();
+        var code = $('#loginCode').val();
+        if (username.length==0 || pass.length==0 || code.length==0){
+            alert("登录信息不能为空！！！");
+        }else{
+            $.ajax({
+                type:"GET",
+                async:false,
+                url:"http://47.98.145.221/toLogin",
+                // xhrFields: {
+                //     withCredentials: true
+                // },
+                // crossDomain: true,
+                data:{UserName:username,PassWord:pass,Code:code},
+                success:function(data){
+                    if (data==0){
+                        alert("密码或验证码错误！！！");
+                        $('#registForm')[0].reset();
+                    }else{
+                        alert("登录成功！");
+                        window.location.href = "http://47.98.145.221/index";
+                    }
+                }//end func(data)
+
+            });//end ajax
+        }
+
+    });
+
+</script>
+<!-- 时间控件 -->
+<script>
+    //执行一个laydate实例
+    laydate.render({
+        elem: '#test' //指定元素
+    });
+</script>
+
+</body>
+
+</html>

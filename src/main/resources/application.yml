@@ -1,0 +1,18 @@
+#数据库配置
+spring:
+  datasource:
+    username: root
+    password: 753951
+    url: jdbc:mysql://47.98.145.221:3306/project
+    #url后接 ?serverTimezone=Asia/Shanghai 或者 ?serverTimezone=UTC  #springboot 2.0以上版本写法
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  thymeleaf:
+    prefix: classpath:/static/
+#mybatis配置
+#mybatis:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#端口配置
+server:
+  port: 80
