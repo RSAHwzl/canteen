@@ -13,21 +13,21 @@ public class UserService {
     @Autowired
     UserMapper userMapper;
 
-    public int insertUser(User user){
+    public int insertUser(User user) {
         //查询用户名是否存在
-        ArrayList<User> userCheck = userMapper.checkUser(user.getUserName());
-        if (userCheck.size() != 0){
+        ArrayList<User> userCheck = userMapper.checkUser(user.getUserName(), user.getAuth());
+        if (userCheck.size() != 0) {
             return 0;
-        }else {
+        } else {
             return userMapper.insertUser(user);
         }
     }
 
-    public int selectUser(String username,String password){
-        ArrayList<User> userCheck=userMapper.selectUser(username,password);
-        if (userCheck.size()==0){
+    public int selectUser(String username, String password, int auth) {
+        ArrayList<User> userCheck = userMapper.selectUser(username, password, auth);
+        if (userCheck.size() == 0) {
             return 0;
-        }else{
+        } else {
             return 1;
         }
     }

@@ -1,380 +1,382 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>首页</title>
-        <meta name="renderer" content="webkit">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
-        <link rel="stylesheet" href="./css/font.css">
-        <link rel="stylesheet" href="./css/xadmin.css">
-        <link rel="stylesheet" href="./css/bootstrap.css">
-        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-        <script type="text/javascript" src="./js/xadmin.js"></script>
-        <script src="js/echarts.min.js"></script>
-        <script src="js/laydate.js"></script>
-        <script src="js/bootstrap.js"></script>
-        <script type="text/javascript" src="./lib/layui/layui.js" charset="utf-8"></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi"/>
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/xadmin.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="./js/xadmin.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/laydate.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="./lib/layui/layui.js" charset="utf-8"></script>
+</head>
 
-    <body style="background: url(./images/bg.png);">
-        <!-- 顶部内容 -->
-        <div class="x-nav">
+<body style="background: url(./images/bg.png);">
+<!-- 顶部内容 -->
+<div class="x-nav">
             <span class="layui-breadcrumb">
               <a href="">首页</a>
                 <a><cite>分类总览</cite></a>
             </span>
-            <input type="text" placeholder="请选择查看日期" id="test" style="height: 30px;" readonly>
-            <button type="button" class="btn btn-primary btn-sm" id="find">查询</button>
+    <input type="text" placeholder="请选择查看日期" id="test" style="height: 30px;" readonly>
+    <button type="button" class="btn btn-primary btn-sm" id="find">查询</button>
+</div>
+<!-- 图表容器 -->
+<div class="layui-fluid">
+    <div class="layui-row">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12 ">
+            <div id="main" style="width: 100%;height: 1400px"></div>
         </div>
-        <!-- 图表容器 -->
-        <div class="layui-fluid">
-            <div class="layui-row">
-               <div class="layui-col-md12 layui-col-sm12 layui-col-xs12 ">
-                    <div id="main" style="width: 100%;height: 1400px"></div>
-               </div>
-            </div>
-        </div>
-        
-        <!-- 第一个图的显示 -->
-        <script>
-           //获取日期查询数据库改变图像
-           $("#find").click(function(){
-               var time = new Date($("#test").val());
-               time = time.getTime()/1000-28800;
-               //日期不在2020年8.9月提示
-               if (time<1596729600 || time>1622390400){
-                   alert("暂无该时间数据，请确认查询日期在2020.8.7-2021.5.31号内！！！");
-               }else{
-                    getData(time)
-               }//end else                
-           });
-       
-           //默认访问当天0时
-            $(function() { 
-               var time = new Date(new Date().toLocaleDateString()).getTime()/1000;
-               getData(time);
-            });
+    </div>
+</div>
 
-            function getData(time){
-                var myChart = echarts.init(document.getElementById('main'));
-                myChart.showLoading();
-                $.ajax({
-                   type:"GET",
-                   url:"http://47.98.145.221/getCategory",
-                   data:{ date:time},
-                   success:function(data){
-                    //时间转换
-                    day=timestampToTime(time);
+<!-- 第一个图的显示 -->
+<script>
+    //获取日期查询数据库改变图像
+    $("#find").click(function () {
+        var time = new Date($("#test").val());
+        time = time.getTime() / 1000 - 28800;
+        //日期不在2020年8.9月提示
+        if (time < 1596729600 || time > 1622390400) {
+            alert("暂无该时间数据，请确认查询日期在2020.8.7-2021.5.31号内！！！");
+        } else {
+            getData(time)
+        }//end else
+    });
 
-                    var builderJson = {
-                        "all": 80000,
-                        "charts": {
-                          "三期-嗨皮土豆": data[6]['num4'],
-                          "二食堂-酱香饼": data[6]['num3'],
-                          "一食堂-西西里风情": data[6]['num2'],
-                          "林间小聚-掉渣饼":  data[6]['num1'],
+    //默认访问当天0时
+    $(function () {
+        var time = new Date(new Date().toLocaleDateString()).getTime() / 1000;
+        getData(time);
+    });
 
-                          "三期-特色渔粉":  data[5]['num6'],
-                          "二食堂-老麻抄手":  data[5]['num5'],
-                          "一食堂-罐罐米线":  data[5]['num4'],
-                          "林间小聚-刘嬢嬢豌杂面":  data[5]['num3'],
-                          "林间小聚-哈喽米线":  data[5]['num2'],
-                          "红房子-二刀面庄": data[5]['num1'],
+    function getData(time) {
+        var myChart = echarts.init(document.getElementById('main'));
+        myChart.showLoading();
+        $.ajax({
+            type: "GET",
+            url: "http://127.0.0.1:8080/getCategory",
+            async: true,
+            data: {date: time},
+            success: function (data) {
+                //时间转换
+                day = timestampToTime(time);
 
-                          "三期-盐都干锅王": data[4]['num4'],
-                          "一食堂-亦冰亦火焖锅": data[4]['num3'],
-                          "林间小聚-麻辣香锅": data[4]['num2'],
-                          "红房子-奇妙干锅": data[4]['num1'],
+                var builderJson = {
+                    "all": 80000,
+                    "charts": {
+                        "三期-嗨皮土豆": data[6]['num4'],
+                        "二食堂-酱香饼": data[6]['num3'],
+                        "一食堂-西西里风情": data[6]['num2'],
+                        "林间小聚-掉渣饼": data[6]['num1'],
 
-                          "二食堂-特色炒饭": data[3]['num5'],
-                          "一食堂-木桶大盘鸡": data[3]['num4'],
-                          "林间小聚-如意家常小炒": data[3]['num3'],
-                          "红房子-小炒系列": data[3]['num2'],
-                          "红房子-盖饭炒饭系列": data[3]['num1'],
+                        "三期-特色渔粉": data[5]['num6'],
+                        "二食堂-老麻抄手": data[5]['num5'],
+                        "一食堂-罐罐米线": data[5]['num4'],
+                        "林间小聚-刘嬢嬢豌杂面": data[5]['num3'],
+                        "林间小聚-哈喽米线": data[5]['num2'],
+                        "红房子-二刀面庄": data[5]['num1'],
 
-                          "三期-晓忆匠卤现捞": data[2]['num6'],
-                          "二食堂-牛肉饭": data[2]['num5'],
-                          "二食堂-煲仔蛋包饭": data[2]['num4'],
-                          "一食堂-美滋滋洋芋饭": data[2]['num3'],
-                          "林间小聚-套饭系列": data[2]['num2'],
-                          "红房子-套饭系列": data[2]['num1'],
+                        "三期-盐都干锅王": data[4]['num4'],
+                        "一食堂-亦冰亦火焖锅": data[4]['num3'],
+                        "林间小聚-麻辣香锅": data[4]['num2'],
+                        "红房子-奇妙干锅": data[4]['num1'],
 
-                          "三期-皇尚吉祥": data[1]['num5'],
-                          "二食堂-好粥道": data[1]['num4'],
-                          "二食堂-营养早餐": data[1]['num3'],
-                          "一食堂-包满意": data[1]['num2'],
-                          "林间小聚-乔园里包子铺": data[1]['num1']
+                        "二食堂-特色炒饭": data[3]['num5'],
+                        "一食堂-木桶大盘鸡": data[3]['num4'],
+                        "林间小聚-如意家常小炒": data[3]['num3'],
+                        "红房子-小炒系列": data[3]['num2'],
+                        "红房子-盖饭炒饭系列": data[3]['num1'],
+
+                        "三期-晓忆匠卤现捞": data[2]['num6'],
+                        "二食堂-牛肉饭": data[2]['num5'],
+                        "二食堂-煲仔蛋包饭": data[2]['num4'],
+                        "一食堂-美滋滋洋芋饭": data[2]['num3'],
+                        "林间小聚-套饭系列": data[2]['num2'],
+                        "红房子-套饭系列": data[2]['num1'],
+
+                        "三期-皇尚吉祥": data[1]['num5'],
+                        "二食堂-好粥道": data[1]['num4'],
+                        "二食堂-营养早餐": data[1]['num3'],
+                        "一食堂-包满意": data[1]['num2'],
+                        "林间小聚-乔园里包子铺": data[1]['num1']
+                    },
+                    "components": {
+                        "三期-嗨皮土豆": data[6]['sum4'],
+                        "二食堂-酱香饼": data[6]['sum3'],
+                        "一食堂-西西里风情": data[6]['sum2'],
+                        "林间小聚-掉渣饼": data[6]['sum1'],
+
+                        "三期-特色渔粉": data[5]['sum6'],
+                        "二食堂-老麻抄手": data[5]['sum5'],
+                        "一食堂-罐罐米线": data[5]['sum4'],
+                        "林间小聚-刘嬢嬢豌杂面": data[5]['sum3'],
+                        "林间小聚-哈喽米线": data[5]['sum2'],
+                        "红房子-二刀面庄": data[5]['sum1'],
+
+                        "三期-盐都干锅王": data[4]['sum4'],
+                        "一食堂-亦冰亦火焖锅": data[4]['sum3'],
+                        "林间小聚-麻辣香锅": data[4]['sum2'],
+                        "红房子-奇妙干锅": data[4]['sum1'],
+
+                        "二食堂-特色炒饭": data[3]['sum5'],
+                        "一食堂-木桶大盘鸡": data[3]['sum4'],
+                        "林间小聚-如意家常小炒": data[3]['sum3'],
+                        "红房子-小炒系列": data[3]['sum2'],
+                        "红房子-盖饭炒饭系列": data[3]['sum1'],
+
+                        "三期-晓忆匠卤现捞": data[2]['sum6'],
+                        "二食堂-牛肉饭": data[2]['sum5'],
+                        "二食堂-煲仔蛋包饭": data[2]['sum4'],
+                        "一食堂-美滋滋洋芋饭": data[2]['sum3'],
+                        "林间小聚-套饭系列": data[2]['sum2'],
+                        "红房子-套饭系列": data[2]['sum1'],
+
+                        "三期-皇尚吉祥": data[1]['sum5'],
+                        "二食堂-好粥道": data[1]['sum4'],
+                        "二食堂-营养早餐": data[1]['sum3'],
+                        "一食堂-包满意": data[1]['sum2'],
+                        "林间小聚-乔园里包子铺": data[1]['sum1']
+                    },
+                };
+
+                var downloadJson = {
+                    "小吃": data[7]['num6'],
+                    "面食": data[7]['num5'],
+                    "干锅焖锅": data[7]['num4'],
+                    "盖饭小炒": data[7]['num3'],
+                    "套饭": data[7]['num2'],
+                    "早餐": data[7]['num1']
+                };
+
+                var themeJson = {
+                    "小吃": data[7]['sum6'],
+                    "面食": data[7]['sum5'],
+                    "干锅焖锅": data[7]['sum4'],
+                    "盖饭小炒": data[7]['sum3'],
+                    "套饭": data[7]['sum2'],
+                    "早餐": data[7]['sum1']
+                };
+
+                var waterMarkText = 'ECHARTS';
+
+                var canvas = document.createElement('canvas');
+                var ctx = canvas.getContext('2d');
+                canvas.width = canvas.height = 100;
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.globalAlpha = 0.08;
+                ctx.font = '20px Microsoft Yahei';
+                ctx.translate(50, 50);
+                ctx.rotate(-Math.PI / 4);
+
+                option = {
+                    color: ['#c03', '#f60', '#fc0', '#393', '#09c', '#f3c'],
+                    backgroundColor: {
+                        type: 'pattern',
+                        image: canvas,
+                        repeat: 'repeat'
+                    },
+                    tooltip: {},
+                    title: [
+                        {
+                            text: day + '分类总览',
+                            left: '25%',
+                            textAlign: 'center'
                         },
-                        "components": {
-                          "三期-嗨皮土豆": data[6]['sum4'],
-                          "二食堂-酱香饼": data[6]['sum3'],
-                          "一食堂-西西里风情": data[6]['sum2'],
-                          "林间小聚-掉渣饼":  data[6]['sum1'],
-
-                          "三期-特色渔粉":  data[5]['sum6'],
-                          "二食堂-老麻抄手":  data[5]['sum5'],
-                          "一食堂-罐罐米线":  data[5]['sum4'],
-                          "林间小聚-刘嬢嬢豌杂面":  data[5]['sum3'],
-                          "林间小聚-哈喽米线":  data[5]['sum2'],
-                          "红房子-二刀面庄": data[5]['sum1'],
-
-                          "三期-盐都干锅王": data[4]['sum4'],
-                          "一食堂-亦冰亦火焖锅": data[4]['sum3'],
-                          "林间小聚-麻辣香锅": data[4]['sum2'],
-                          "红房子-奇妙干锅": data[4]['sum1'],
-
-                          "二食堂-特色炒饭": data[3]['sum5'],
-                          "一食堂-木桶大盘鸡": data[3]['sum4'],
-                          "林间小聚-如意家常小炒": data[3]['sum3'],
-                          "红房子-小炒系列": data[3]['sum2'],
-                          "红房子-盖饭炒饭系列": data[3]['sum1'],
-
-                          "三期-晓忆匠卤现捞": data[2]['sum6'],
-                          "二食堂-牛肉饭": data[2]['sum5'],
-                          "二食堂-煲仔蛋包饭": data[2]['sum4'],
-                          "一食堂-美滋滋洋芋饭": data[2]['sum3'],
-                          "林间小聚-套饭系列": data[2]['sum2'],
-                          "红房子-套饭系列": data[2]['sum1'],
-
-                          "三期-皇尚吉祥": data[1]['sum5'],
-                          "二食堂-好粥道": data[1]['sum4'],
-                          "二食堂-营养早餐": data[1]['sum3'],
-                          "一食堂-包满意": data[1]['sum2'],
-                          "林间小聚-乔园里包子铺": data[1]['sum1']
+                        {
+                            text: '销售份数',
+                            subtext: '总计 ' + Object.keys(downloadJson).reduce(function (all, key) {
+                                return all + downloadJson[key];
+                            }, 0),
+                            left: '75%',
+                            textAlign: 'center'
+                        }, {
+                            text: '销售额',
+                            subtext: '总计 ' + Object.keys(themeJson).reduce(function (all, key) {
+                                return all + themeJson[key];
+                            }, 0),
+                            left: '75%',
+                            top: '55%',
+                            textAlign: 'center'
+                        }],
+                    grid: [{
+                        top: 50,
+                        width: '50%',
+                        bottom: '45%',
+                        left: 10,
+                        containLabel: true
+                    }, {
+                        top: '55%',
+                        width: '50%',
+                        bottom: 0,
+                        left: 10,
+                        containLabel: true
+                    }],
+                    xAxis: [{
+                        type: 'value',
+                        max: 5000,
+                        splitLine: {
+                            show: false
+                        }
+                    }, {
+                        type: 'value',
+                        max: builderJson.all,
+                        gridIndex: 1,
+                        splitLine: {
+                            show: false
+                        }
+                    }],
+                    yAxis: [
+                        {
+                            type: 'category',
+                            data: Object.keys(builderJson.charts),
+                            axisLabel: {
+                                interval: 0,
+                                textStyle: {
+                                    fontSize: 15      //更改坐标轴文字大小
+                                }
+                            },
+                            splitLine: {
+                                show: false
+                            }
+                        }, {
+                            gridIndex: 1,
+                            type: 'category',
+                            data: Object.keys(builderJson.components),
+                            axisLabel: {
+                                interval: 0,
+                                textStyle: {
+                                    fontSize: 15      //更改坐标轴文字大小
+                                }
+                            },
+                            splitLine: {
+                                show: false
+                            }
+                        }],
+                    series: [{
+                        type: 'bar',
+                        stack: 'chart',
+                        z: 3,
+                        label: {
+                            normal: {
+                                position: 'right',
+                                show: true
+                            }
                         },
-                      };
-
-                      var downloadJson = {
-                        "小吃": data[7]['num6'],
-                        "面食": data[7]['num5'],
-                        "干锅焖锅": data[7]['num4'],
-                        "盖饭小炒": data[7]['num3'],
-                        "套饭": data[7]['num2'],
-                        "早餐": data[7]['num1']
-                      };
-
-                      var themeJson = {
-                        "小吃": data[7]['sum6'],
-                        "面食": data[7]['sum5'],
-                        "干锅焖锅": data[7]['sum4'],
-                        "盖饭小炒": data[7]['sum3'],
-                        "套饭": data[7]['sum2'],
-                        "早餐": data[7]['sum1']
-                      };
-
-                      var waterMarkText = 'ECHARTS';
-
-                      var canvas = document.createElement('canvas');
-                      var ctx = canvas.getContext('2d');
-                      canvas.width = canvas.height = 100;
-                      ctx.textAlign = 'center';
-                      ctx.textBaseline = 'middle';
-                      ctx.globalAlpha = 0.08;
-                      ctx.font = '20px Microsoft Yahei';
-                      ctx.translate(50, 50);
-                      ctx.rotate(-Math.PI / 4);
-
-                      option = {
-                          color:['#c03','#f60','#fc0','#393','#09c','#f3c'],
-                          backgroundColor: {
-                              type: 'pattern',
-                              image: canvas,
-                              repeat: 'repeat'
-                          },
-                          tooltip: {},
-                          title: [
-                          {
-                              text: day+'分类总览',
-                              left: '25%',
-                              textAlign: 'center'
-                          },
-                          {
-                              text: '销售份数',
-                              subtext: '总计 ' + Object.keys(downloadJson).reduce(function (all, key) {
-                                  return all + downloadJson[key];
-                              }, 0),
-                              left: '75%',
-                              textAlign: 'center'
-                          }, {
-                              text: '销售额',
-                              subtext: '总计 ' + Object.keys(themeJson).reduce(function (all, key) {
-                                  return all + themeJson[key];
-                              }, 0),
-                              left: '75%',
-                              top: '55%',
-                              textAlign: 'center'
-                          }],
-                          grid: [{
-                              top: 50,
-                              width: '50%',
-                              bottom: '45%',
-                              left: 10,
-                              containLabel: true
-                          }, {
-                              top: '55%',
-                              width: '50%',
-                              bottom: 0,
-                              left: 10,
-                              containLabel: true
-                          }],
-                          xAxis: [{
-                              type: 'value',
-                              max: 5000,
-                              splitLine: {
-                                  show: false
-                              }
-                          }, {
-                              type: 'value',
-                              max: builderJson.all,
-                              gridIndex: 1,
-                              splitLine: {
-                                  show: false
-                              }
-                          }],
-                          yAxis: [
-                          {
-                              type: 'category',
-                              data: Object.keys(builderJson.charts),
-                              axisLabel: {
-                                  interval: 0,
-                                  textStyle: {
-                                     fontSize : 15      //更改坐标轴文字大小
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    //自定义颜色
+                                    var colorList = ['#c03', '#c03', '#c03', '#c03', '#f60', '#f60', '#f60', '#f60', '#f60', '#f60', '#fc0', '#fc0', '#fc0', '#fc0', '#393', '#393', '#393', '#393', '#393', '#09c', '#09c', '#09c', '#09c', '#09c', '#09c', '#f3c', '#f3c', '#f3c', '#f3c', '#f3c'];
+                                    return colorList[params.dataIndex]
                                 }
-                              },
-                              splitLine: {
-                                  show: false
-                              }
-                          }, {
-                              gridIndex: 1,
-                              type: 'category',
-                              data: Object.keys(builderJson.components),
-                              axisLabel: {
-                                  interval: 0,
-                                  textStyle: {
-                                     fontSize : 15      //更改坐标轴文字大小
+                            }
+                        },
+                        data: Object.keys(builderJson.charts).map(function (key) {
+                            return builderJson.charts[key];
+                        })
+                    }, {
+                        type: 'bar',
+                        stack: 'chart',
+                        silent: true,
+                        itemStyle: {
+                            normal: {
+                                color: '#eee'
+                            }
+                        },
+                        data: Object.keys(builderJson.charts).map(function (key) {
+                            return builderJson.all - builderJson.charts[key];
+                        })
+                    }, {
+                        type: 'bar',
+                        stack: 'component',
+                        xAxisIndex: 1,
+                        yAxisIndex: 1,
+                        z: 3,
+                        label: {
+                            normal: {
+                                position: 'right',
+                                show: true
+                            }
+                        },
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    //自定义颜色
+                                    var colorList = ['#c03', '#c03', '#c03', '#c03', '#f60', '#f60', '#f60', '#f60', '#f60', '#f60', '#fc0', '#fc0', '#fc0', '#fc0', '#393', '#393', '#393', '#393', '#393', '#09c', '#09c', '#09c', '#09c', '#09c', '#09c', '#f3c', '#f3c', '#f3c', '#f3c', '#f3c'];
+                                    return colorList[params.dataIndex]
                                 }
-                              },
-                              splitLine: {
-                                  show: false
-                              }
-                          }],
-                          series: [{
-                              type: 'bar',
-                              stack: 'chart',
-                              z: 3,
-                              label: {
-                                  normal: {
-                                      position: 'right',
-                                      show: true
-                                  }
-                              },
-                              itemStyle: {
-                                  normal: {
-                                    color:function(params) {
-                                         //自定义颜色
-                                         var colorList = ['#c03','#c03','#c03','#c03','#f60','#f60','#f60','#f60','#f60','#f60','#fc0','#fc0','#fc0','#fc0','#393','#393','#393','#393','#393','#09c','#09c','#09c','#09c','#09c','#09c','#f3c','#f3c','#f3c','#f3c','#f3c'];
-                                         return colorList[params.dataIndex]
-                                     }
-                                  }
-                              },
-                              data: Object.keys(builderJson.charts).map(function (key) {
-                                  return builderJson.charts[key];
-                              })
-                          }, {
-                              type: 'bar',
-                              stack: 'chart',
-                              silent: true,
-                              itemStyle: {
-                                  normal: {
-                                    color:'#eee'
-                                  }
-                              },
-                              data: Object.keys(builderJson.charts).map(function (key) {
-                                  return builderJson.all - builderJson.charts[key];
-                              })
-                          }, {
-                              type: 'bar',
-                              stack: 'component',
-                              xAxisIndex: 1,
-                              yAxisIndex: 1,
-                              z: 3,
-                              label: {
-                                  normal: {
-                                      position: 'right',
-                                      show: true
-                                  }
-                              },
-                              itemStyle: {
-                                  normal: {
-                                    color:function(params) {
-                                         //自定义颜色
-                                         var colorList = ['#c03','#c03','#c03','#c03','#f60','#f60','#f60','#f60','#f60','#f60','#fc0','#fc0','#fc0','#fc0','#393','#393','#393','#393','#393','#09c','#09c','#09c','#09c','#09c','#09c','#f3c','#f3c','#f3c','#f3c','#f3c'];
-                                         return colorList[params.dataIndex]
-                                     }
-                                  }
-                              },
-                              data: Object.keys(builderJson.components).map(function (key) {
-                                  return builderJson.components[key];
-                              })
-                          }, {
-                              type: 'bar',
-                              stack: 'component',
-                              silent: true,
-                              xAxisIndex: 1,
-                              yAxisIndex: 1,
-                              itemStyle: {
-                                  normal: {
-                                      color: '#eee'
-                                  }
-                              },
-                              data: Object.keys(builderJson.components).map(function (key) {
-                                  return builderJson.all - builderJson.components[key];
-                              })
-                          }, {
-                              type: 'pie',
-                              radius: [0, '30%'],
-                              center: ['75%', '30%'],
-                              data: Object.keys(downloadJson).map(function (key) {
-                                  return {
-                                      name: key.replace('.js', ''),
-                                      value: downloadJson[key]
-                                  }
-                              })
-                          }, {
-                              type: 'pie',
-                              radius: [0, '30%'],
-                              center: ['75%', '80%'],
-                              data: Object.keys(themeJson).map(function (key) {
-                                  return {
-                                      name: key.replace('.js', ''),
-                                      value: themeJson[key]
-                                  };
-                              })
-                          }]
-                      };
-                      myChart.hideLoading();
-                      myChart.setOption(option);
-                    } //end func(data)
-                }); //end ajax
-            }//end func
-            
-            //时间戳转换为2020-9-23
-            function timestampToTime(timestamp) {
-               //时间戳为10位需*1000，时间戳为13位的话不需乘1000
-               var date = new Date(timestamp * 1000);
-               Y = date.getFullYear() + '-';
-               M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
-               D = date.getDate();
-               return Y+M+D;
-            }
-       </script>
-       <!-- 时间控件 -->
-       <script>
-           //执行一个laydate实例
-           laydate.render({
-             elem: '#test' //指定元素
-           });
-       </script>
-    </body>
+                            }
+                        },
+                        data: Object.keys(builderJson.components).map(function (key) {
+                            return builderJson.components[key];
+                        })
+                    }, {
+                        type: 'bar',
+                        stack: 'component',
+                        silent: true,
+                        xAxisIndex: 1,
+                        yAxisIndex: 1,
+                        itemStyle: {
+                            normal: {
+                                color: '#eee'
+                            }
+                        },
+                        data: Object.keys(builderJson.components).map(function (key) {
+                            return builderJson.all - builderJson.components[key];
+                        })
+                    }, {
+                        type: 'pie',
+                        radius: [0, '30%'],
+                        center: ['75%', '30%'],
+                        data: Object.keys(downloadJson).map(function (key) {
+                            return {
+                                name: key.replace('.js', ''),
+                                value: downloadJson[key]
+                            }
+                        })
+                    }, {
+                        type: 'pie',
+                        radius: [0, '30%'],
+                        center: ['75%', '80%'],
+                        data: Object.keys(themeJson).map(function (key) {
+                            return {
+                                name: key.replace('.js', ''),
+                                value: themeJson[key]
+                            };
+                        })
+                    }]
+                };
+                myChart.hideLoading();
+                myChart.setOption(option);
+            } //end func(data)
+        }); //end ajax
+    }//end func
+
+    //时间戳转换为2020-9-23
+    function timestampToTime(timestamp) {
+        //时间戳为10位需*1000，时间戳为13位的话不需乘1000
+        var date = new Date(timestamp * 1000);
+        Y = date.getFullYear() + '-';
+        M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+        D = date.getDate();
+        return Y + M + D;
+    }
+</script>
+<!-- 时间控件 -->
+<script>
+    //执行一个laydate实例
+    laydate.render({
+        elem: '#test' //指定元素
+    });
+</script>
+</body>
 </html>

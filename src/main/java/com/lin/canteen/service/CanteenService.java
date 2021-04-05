@@ -30,7 +30,7 @@ public class CanteenService {
             //计算canteen食堂各窗口num的该天消费额
             for(int j=1;j<num;j++){
                 int t=j-1;
-                double sum=window.stream().filter(Window->Window.getmCanteen()==canteen)
+                double sum=window.parallelStream().filter(Window->Window.getmCanteen()==canteen)
                         .filter(Window->Window.getmWindow()==windowTag[t])
                         .mapToDouble(Window::getmSum).sum();
                 sum=new BigDecimal(sum).setScale(1, BigDecimal.ROUND_HALF_UP).doubleValue();

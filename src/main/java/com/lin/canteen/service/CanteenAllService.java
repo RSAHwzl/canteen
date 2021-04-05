@@ -26,19 +26,19 @@ public class CanteenAllService {
             HashMap<Integer,Double> canteenAll=new HashMap<>();
             ArrayList<Canteen> canteen = consumeMapper.findCanteenByDate(date);
             //计算红房子该天总消费额
-            Double sum1=canteen.stream().filter(Canteen->Canteen.getmCanteen()==1)
+            Double sum1=canteen.parallelStream().filter(Canteen->Canteen.getmCanteen()==1)
                     .mapToDouble(Canteen::getmSum).sum();
             //计算林间小聚该天总消费额
-            Double sum2=canteen.stream().filter(Canteen->Canteen.getmCanteen()==2)
+            Double sum2=canteen.parallelStream().filter(Canteen->Canteen.getmCanteen()==2)
                     .mapToDouble(Canteen::getmSum).sum();
             //计算一食堂该天总消费额
-            Double sum3=canteen.stream().filter(Canteen->Canteen.getmCanteen()==3)
+            Double sum3=canteen.parallelStream().filter(Canteen->Canteen.getmCanteen()==3)
                     .mapToDouble(Canteen::getmSum).sum();
             //计算二食堂该天总消费额
-            Double sum4=canteen.stream().filter(Canteen->Canteen.getmCanteen()==4)
+            Double sum4=canteen.parallelStream().filter(Canteen->Canteen.getmCanteen()==4)
                     .mapToDouble(Canteen::getmSum).sum();
             //计算三期该天总消费额
-            Double sum5=canteen.stream().filter(Canteen->Canteen.getmCanteen()==5)
+            Double sum5=canteen.parallelStream().filter(Canteen->Canteen.getmCanteen()==5)
                     .mapToDouble(Canteen::getmSum).sum();
             //处理double，只保留一位小数
             sum1=new BigDecimal(sum1).setScale(1, BigDecimal.ROUND_HALF_UP).doubleValue();
@@ -69,7 +69,7 @@ public class CanteenAllService {
         for(int i=0;i<7;i++){
             ArrayList<Canteen> canteen = consumeMapper.findCanteenByDate(date);
             //计算所有食堂该天总消费额
-            Double sum=canteen.stream().mapToDouble(Canteen::getmSum).sum();
+            Double sum=canteen.parallelStream().mapToDouble(Canteen::getmSum).sum();
             //处理double，只保留一位小数
             sum=new BigDecimal(sum).setScale(1, BigDecimal.ROUND_HALF_UP).doubleValue();
             //数据放入

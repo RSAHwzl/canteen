@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
-  
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <title>欢迎页面-X-admin2.0</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+    <meta name="viewport"
+          content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi"/>
     <link rel="stylesheet" href="./css/font.css">
     <link rel="stylesheet" href="./css/xadmin.css">
     <link rel="stylesheet" href="./css/bootstrap.css">
@@ -16,342 +17,352 @@
     <script src="js/laydate.js"></script>
     <script src="js/bootstrap.js"></script>
     <script type="text/javascript" src="./lib/layui/layui.js" charset="utf-8"></script>
-  </head>
-  
-  <body style="background: url(./images/bg.png);">
-    <div class="x-nav">
+</head>
+
+<body style="background: url(./images/bg.png);">
+<div class="x-nav">
       <span class="layui-breadcrumb">
         <a href="">首页</a>
         <a href="">食堂分览</a>
         <a>
           <cite>一食堂</cite></a>
       </span>
-      <!-- 搜索日期框 -->
-      <input type="text" placeholder="请选择查看日期" id="test" style="height: 30px;margin-left: 10px" readonly>
-      <button type="button" class="btn btn-primary btn-sm" id="find">查询</button>
-    </div>
-     <!-- 图表容器 -->
-    <div class="layui-fluid">
-        <div class="layui-row">
-           <div class="layui-col-md6 layui-col-sm6 layui-col-xs12 ">
-                <div id="main" style="width: 100%;height: 500px"></div>
-           </div>
-            <div class="layui-col-md6 layui-col-sm6 layui-col-xs12 ">
-                <div id="main2" style="width: 100%;height: 500px"></div>
-            </div>
+    <!-- 搜索日期框 -->
+    <input type="text" placeholder="请选择查看日期" id="test" style="height: 30px;margin-left: 10px" readonly>
+    <button type="button" class="btn btn-primary btn-sm" id="find">查询</button>
+</div>
+<!-- 图表容器 -->
+<div class="layui-fluid">
+    <div class="layui-row">
+        <div class="layui-col-md6 layui-col-sm6 layui-col-xs12 ">
+            <div id="main" style="width: 100%;height: 500px"></div>
+        </div>
+        <div class="layui-col-md6 layui-col-sm6 layui-col-xs12 ">
+            <div id="main2" style="width: 100%;height: 500px"></div>
         </div>
     </div>
-    <script type="text/javascript">
-        //获取日期查询数据库改变图像
-           $("#find").click(function(){
-               var time = new Date($("#test").val());
-               time = time.getTime()/1000-28800;
-               //日期不在2020年8.9月提示
-               if (time<1596729600 || time>1622390400){
-                   alert("暂无该时间数据，请确认查询日期在2020.8.7-2021.5.31号内！！！");
-               }else{
-                    getData(time)
-               }//end else                
-           });
-       
-           //默认访问当天0时
-            $(function() { 
-               var time = new Date(new Date().toLocaleDateString()).getTime()/1000;
-               getData(time);
-            });
+</div>
+<script type="text/javascript">
+    //获取日期查询数据库改变图像
+    $("#find").click(function () {
+        var time = new Date($("#test").val());
+        time = time.getTime() / 1000 - 28800;
+        //日期不在2020年8.9月提示
+        if (time < 1596729600 || time > 1622390400) {
+            alert("暂无该时间数据，请确认查询日期在2020.8.7-2021.5.31号内！！！");
+        } else {
+            getData(time)
+        }//end else
+    });
 
-            function getData(time){
-                var myChart = echarts.init(document.getElementById('main'));
-                var myChart2 = echarts.init(document.getElementById('main2'));
-                myChart.showLoading();
-                $.get("http://47.98.145.221/getYstSum", { date:time },function(data){
-                   var t=86400;
-                   //计算横坐标
-                   xday1=timestampToTime(time);
-                   xday2=timestampToTime(time-t);
-                   xday3=timestampToTime(time-2*t);
-                   xday4=timestampToTime(time-3*t);
-                   xday5=timestampToTime(time-4*t);
-                   xday6=timestampToTime(time-5*t);
-                   xday7=timestampToTime(time-6*t);
-                   //获取value
-                   var day1=data[time];
-                   var day2=data[time-t];
-                   var day3=data[time-2*t];
-                   var day4=data[time-3*t];
-                   var day5=data[time-4*t];
-                   var day6=data[time-5*t];
-                   var day7=data[time-6*t];
-                   // 指定图表的配置项和数据
-                   option = {
-                      tooltip: {
-                          trigger: 'axis',
-                          axisPointer: {
-                              type: 'cross',
-                              label: {
-                                  backgroundColor: '#6a7985'
-                              }
-                          }
-                      },
-                      legend: {
-                          data: ['罐罐米线', '美滋滋洋芋饭', '亦冰亦火焖锅', 
-                          '西西里风情', '木桶大盘鸡','包满意']
-                      },
-                      toolbox: {
-                          feature: {
-                              saveAsImage: {}
-                          }
-                      },
-                      grid: {
-                          left: '1%',
-                          right: '4%',
-                          bottom: '1%',
-                          containLabel: true
-                      },
-                      xAxis: [
-                          {
-                              type: 'category',
-                              boundaryGap: false,
-                              data: [xday7, xday6, xday5, xday4, xday3, xday2, xday1],
-                              axisLabel: {
-                               interval:0,//代表显示所有x轴标签显示
-                               rotate:45, //代表逆时针旋转45度
-                               textStyle: {
-                                 color: '#315070',  //更改坐标轴文字颜色
-                                 fontSize : 10      //更改坐标轴文字大小
-                               }
-                             },
-                             axisLine:{
-                                  lineStyle:{
-                                     color:'#315070' //更改坐标轴颜色
-                                  }
+    //默认访问当天0时
+    $(function () {
+        var time = new Date(new Date().toLocaleDateString()).getTime() / 1000;
+        getData(time);
+    });
+
+    function getData(time) {
+        var myChart = echarts.init(document.getElementById('main'));
+        var myChart2 = echarts.init(document.getElementById('main2'));
+        myChart.showLoading();
+        $.ajax({
+            type: "GET",
+            url: "http://127.0.0.1:8080/getYstSum",
+            async: true,
+            data: {date: time},
+            success: function (data) {
+                var t = 86400;
+                //计算横坐标
+                xday1 = timestampToTime(time);
+                xday2 = timestampToTime(time - t);
+                xday3 = timestampToTime(time - 2 * t);
+                xday4 = timestampToTime(time - 3 * t);
+                xday5 = timestampToTime(time - 4 * t);
+                xday6 = timestampToTime(time - 5 * t);
+                xday7 = timestampToTime(time - 6 * t);
+                //获取value
+                var day1 = data[time];
+                var day2 = data[time - t];
+                var day3 = data[time - 2 * t];
+                var day4 = data[time - 3 * t];
+                var day5 = data[time - 4 * t];
+                var day6 = data[time - 5 * t];
+                var day7 = data[time - 6 * t];
+                // 指定图表的配置项和数据
+                option = {
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'cross',
+                            label: {
+                                backgroundColor: '#6a7985'
                             }
-                          }
-                      ],
-                      yAxis: [
-                          {
-                              type: 'value'
-                          }
-                      ],
-                      series: [
-                          {
-                              name: '罐罐米线',
-                              type: 'line',
-                              stack: '总量',
-                              areaStyle: {},
-                              data: [day7[1], day6[1], day5[1], day4[1], day3[1], day2[1], day1[1]]
-                          },
-                          {
-                              name: '美滋滋洋芋饭',
-                              type: 'line',
-                              stack: '总量',
-                              areaStyle: {},
-                              data: [day7[2], day6[2], day5[2], day4[2], day3[2], day2[2], day1[2]]
-                          },
-                          {
-                              name: '亦冰亦火焖锅',
-                              type: 'line',
-                              stack: '总量',
-                              areaStyle: {},
-                              data: [day7[3], day6[3], day5[3], day4[3], day3[3], day2[3], day1[3]]
-                          },
-                          {
-                              name: '西西里风情',
-                              type: 'line',
-                              stack: '总量',
-                              areaStyle: {},
-                              data: [day7[4], day6[4], day5[4], day4[4], day3[4], day2[4], day1[4]]
-                          },
-                          {
-                              name: '木桶大盘鸡',
-                              type: 'line',
-                              stack: '总量',
-                              areaStyle: {},
-                              data: [day7[5], day6[5], day5[5], day4[5], day3[5], day2[5], day1[5]]
-                          },
-                          {
-                              name: '包满意',
-                              type: 'line',
-                              stack: '总量',
-                              label: {
-                                  normal: {
-                                      show: true,
-                                      position: 'top'
-                                  }
-                              },
-                              areaStyle: {},
-                              data: [day7[6], day6[6], day5[6], day4[6], day3[6], day2[6], day1[6]]
-                          }
-                      ]
-                   };
-                   myChart.hideLoading();
-                   // 使用刚指定的配置项和数据显示图表。
-                   myChart.setOption(option);
-                   //根据浏览器大小改变大小
-                   // window.onresize =myChart.resize();
-                },"json");
-
-                //第二个图表
-                myChart2.showLoading();
-                $.get("http://47.98.145.221/getYstSum",{date:time},function(data){
-                    var t=86400;
-                   //计算横坐标
-                   xday1=timestampToTime(time);
-                   xday2=timestampToTime(time-t);
-                   xday3=timestampToTime(time-2*t);
-                   xday4=timestampToTime(time-3*t);
-                   xday5=timestampToTime(time-4*t);
-                   xday6=timestampToTime(time-5*t);
-                   xday7=timestampToTime(time-6*t);
-                   //获取value
-                   var day1=data[time];
-                   var day2=data[time-t];
-                   var day3=data[time-2*t];
-                   var day4=data[time-3*t];
-                   var day5=data[time-4*t];
-                   var day6=data[time-5*t];
-                   var day7=data[time-6*t];
-                   setTimeout(function () {
-                    option2 = {
-                      tooltip: {
-                          trigger: 'axis'
-                      },
-                      legend: {
-                          data: ['罐罐米线', '美滋滋洋芋饭', '亦冰亦火焖锅', 
-                          '西西里风情', '木桶大盘鸡','包满意']
-                      },
-                      grid: {
-                          left: '1%',
-                          right: '4%',
-                          bottom: '1%',
-                          containLabel: true
-                      },
-                      toolbox: {
-                          feature: {
-                              saveAsImage: {}
-                          }
-                      },
-                      xAxis: {
-                          type: 'category',
-                          boundaryGap: false,
-                          data: [xday7, xday6, xday5, xday4, xday3, xday2, xday1],
-                          axisLabel: {
-                           interval:0,//代表显示所有x轴标签显示
-                           rotate:45, //代表逆时针旋转45度
-                           textStyle: {
-                             color: '#315070',  //更改坐标轴文字颜色
-                             fontSize : 10      //更改坐标轴文字大小
-                           }
-                         },
-                         axisLine:{
-                              lineStyle:{
-                                 color:'#315070' //更改坐标轴颜色
-                              }
                         }
-                      },
-                      yAxis: {
-                          type: 'value'
-                      },
-                      series: [
-                          {
-                              name: '罐罐米线',
-                              type: 'line',
-                              stack: '9000',
-                              data: [day7[1], day6[1], day5[1], day4[1], day3[1], day2[1], day1[1]],
-                              label: {
-                                  normal: {
-                                      show: true,
-                                      position: 'top'
-                                  }
-                              },
-                          },
-                          {
-                              name: '美滋滋洋芋饭',
-                              type: 'line',
-                              stack: '18000',
-                              data: [day7[2], day6[2], day5[2], day4[2], day3[2], day2[2], day1[2]],
-                              label: {
-                                  normal: {
-                                      show: true,
-                                      position: 'top'
-                                  }
-                              },
-                          },
-                          {
-                              name: '亦冰亦火焖锅',
-                              type: 'line',
-                              stack: '27000',
-                              data: [day7[3], day6[3], day5[3], day4[3], day3[3], day2[3], day1[3]],
-                              label: {
-                                  normal: {
-                                      show: true,
-                                      position: 'top'
-                                  }
-                              },
-                          },
-                          {
-                              name: '西西里风情',
-                              type: 'line',
-                              stack: '36000',
-                              data: [day7[4], day6[4], day5[4], day4[4], day3[4], day2[4], day1[4]],
-                              label: {
-                                  normal: {
-                                      show: true,
-                                      position: 'top'
-                                  }
-                              },
-                          },
-                          {
-                              name: '木桶大盘鸡',
-                              type: 'line',
-                              stack: '45000',
-                              data: [day7[5], day6[5], day5[5], day4[5], day3[5], day2[5], day1[5]],
-                              label: {
-                                  normal: {
-                                      show: true,
-                                      position: 'top'
-                                  }
-                              },
-                          },
-                          {
-                              name: '包满意',
-                              type: 'line',
-                              stack: '54000',
-                              data: [day7[6], day6[6], day5[6], day4[6], day3[6], day2[6], day1[6]],
-                              label: {
-                                  normal: {
-                                      show: true,
-                                      position: 'top'
-                                  }
-                              },
-                          }
-                      ]
+                    },
+                    legend: {
+                        data: ['罐罐米线', '美滋滋洋芋饭', '亦冰亦火焖锅',
+                            '西西里风情', '木桶大盘鸡', '包满意']
+                    },
+                    toolbox: {
+                        feature: {
+                            saveAsImage: {}
+                        }
+                    },
+                    grid: {
+                        left: '1%',
+                        right: '4%',
+                        bottom: '1%',
+                        containLabel: true
+                    },
+                    xAxis: [
+                        {
+                            type: 'category',
+                            boundaryGap: false,
+                            data: [xday7, xday6, xday5, xday4, xday3, xday2, xday1],
+                            axisLabel: {
+                                interval: 0,//代表显示所有x轴标签显示
+                                rotate: 45, //代表逆时针旋转45度
+                                textStyle: {
+                                    color: '#315070',  //更改坐标轴文字颜色
+                                    fontSize: 10      //更改坐标轴文字大小
+                                }
+                            },
+                            axisLine: {
+                                lineStyle: {
+                                    color: '#315070' //更改坐标轴颜色
+                                }
+                            }
+                        }
+                    ],
+                    yAxis: [
+                        {
+                            type: 'value'
+                        }
+                    ],
+                    series: [
+                        {
+                            name: '罐罐米线',
+                            type: 'line',
+                            stack: '总量',
+                            areaStyle: {},
+                            data: [day7[1], day6[1], day5[1], day4[1], day3[1], day2[1], day1[1]]
+                        },
+                        {
+                            name: '美滋滋洋芋饭',
+                            type: 'line',
+                            stack: '总量',
+                            areaStyle: {},
+                            data: [day7[2], day6[2], day5[2], day4[2], day3[2], day2[2], day1[2]]
+                        },
+                        {
+                            name: '亦冰亦火焖锅',
+                            type: 'line',
+                            stack: '总量',
+                            areaStyle: {},
+                            data: [day7[3], day6[3], day5[3], day4[3], day3[3], day2[3], day1[3]]
+                        },
+                        {
+                            name: '西西里风情',
+                            type: 'line',
+                            stack: '总量',
+                            areaStyle: {},
+                            data: [day7[4], day6[4], day5[4], day4[4], day3[4], day2[4], day1[4]]
+                        },
+                        {
+                            name: '木桶大盘鸡',
+                            type: 'line',
+                            stack: '总量',
+                            areaStyle: {},
+                            data: [day7[5], day6[5], day5[5], day4[5], day3[5], day2[5], day1[5]]
+                        },
+                        {
+                            name: '包满意',
+                            type: 'line',
+                            stack: '总量',
+                            label: {
+                                normal: {
+                                    show: true,
+                                    position: 'top'
+                                }
+                            },
+                            areaStyle: {},
+                            data: [day7[6], day6[6], day5[6], day4[6], day3[6], day2[6], day1[6]]
+                        }
+                    ]
+                };
+                myChart.hideLoading();
+                // 使用刚指定的配置项和数据显示图表。
+                myChart.setOption(option);
+                //根据浏览器大小改变大小
+                // window.onresize =myChart.resize();
+            }
+        });
+
+        //第二个图表
+        myChart2.showLoading();
+        $.ajax({
+            type: "GET",
+            url: "http://127.0.0.1:8080/getYstSum",
+            async: true,
+            data: {date: time},
+            success: function (data) {
+                var t = 86400;
+                //计算横坐标
+                xday1 = timestampToTime(time);
+                xday2 = timestampToTime(time - t);
+                xday3 = timestampToTime(time - 2 * t);
+                xday4 = timestampToTime(time - 3 * t);
+                xday5 = timestampToTime(time - 4 * t);
+                xday6 = timestampToTime(time - 5 * t);
+                xday7 = timestampToTime(time - 6 * t);
+                //获取value
+                var day1 = data[time];
+                var day2 = data[time - t];
+                var day3 = data[time - 2 * t];
+                var day4 = data[time - 3 * t];
+                var day5 = data[time - 4 * t];
+                var day6 = data[time - 5 * t];
+                var day7 = data[time - 6 * t];
+                setTimeout(function () {
+                    option2 = {
+                        tooltip: {
+                            trigger: 'axis'
+                        },
+                        legend: {
+                            data: ['罐罐米线', '美滋滋洋芋饭', '亦冰亦火焖锅',
+                                '西西里风情', '木桶大盘鸡', '包满意']
+                        },
+                        grid: {
+                            left: '1%',
+                            right: '4%',
+                            bottom: '1%',
+                            containLabel: true
+                        },
+                        toolbox: {
+                            feature: {
+                                saveAsImage: {}
+                            }
+                        },
+                        xAxis: {
+                            type: 'category',
+                            boundaryGap: false,
+                            data: [xday7, xday6, xday5, xday4, xday3, xday2, xday1],
+                            axisLabel: {
+                                interval: 0,//代表显示所有x轴标签显示
+                                rotate: 45, //代表逆时针旋转45度
+                                textStyle: {
+                                    color: '#315070',  //更改坐标轴文字颜色
+                                    fontSize: 10      //更改坐标轴文字大小
+                                }
+                            },
+                            axisLine: {
+                                lineStyle: {
+                                    color: '#315070' //更改坐标轴颜色
+                                }
+                            }
+                        },
+                        yAxis: {
+                            type: 'value'
+                        },
+                        series: [
+                            {
+                                name: '罐罐米线',
+                                type: 'line',
+                                stack: '9000',
+                                data: [day7[1], day6[1], day5[1], day4[1], day3[1], day2[1], day1[1]],
+                                label: {
+                                    normal: {
+                                        show: true,
+                                        position: 'top'
+                                    }
+                                },
+                            },
+                            {
+                                name: '美滋滋洋芋饭',
+                                type: 'line',
+                                stack: '18000',
+                                data: [day7[2], day6[2], day5[2], day4[2], day3[2], day2[2], day1[2]],
+                                label: {
+                                    normal: {
+                                        show: true,
+                                        position: 'top'
+                                    }
+                                },
+                            },
+                            {
+                                name: '亦冰亦火焖锅',
+                                type: 'line',
+                                stack: '27000',
+                                data: [day7[3], day6[3], day5[3], day4[3], day3[3], day2[3], day1[3]],
+                                label: {
+                                    normal: {
+                                        show: true,
+                                        position: 'top'
+                                    }
+                                },
+                            },
+                            {
+                                name: '西西里风情',
+                                type: 'line',
+                                stack: '36000',
+                                data: [day7[4], day6[4], day5[4], day4[4], day3[4], day2[4], day1[4]],
+                                label: {
+                                    normal: {
+                                        show: true,
+                                        position: 'top'
+                                    }
+                                },
+                            },
+                            {
+                                name: '木桶大盘鸡',
+                                type: 'line',
+                                stack: '45000',
+                                data: [day7[5], day6[5], day5[5], day4[5], day3[5], day2[5], day1[5]],
+                                label: {
+                                    normal: {
+                                        show: true,
+                                        position: 'top'
+                                    }
+                                },
+                            },
+                            {
+                                name: '包满意',
+                                type: 'line',
+                                stack: '54000',
+                                data: [day7[6], day6[6], day5[6], day4[6], day3[6], day2[6], day1[6]],
+                                label: {
+                                    normal: {
+                                        show: true,
+                                        position: 'top'
+                                    }
+                                },
+                            }
+                        ]
                     };
                     myChart2.hideLoading();
                     myChart2.setOption(option2);
                 });//end func(data)
-
-                },"json");//end get
-
-            }//end func
-            
-            //时间戳转换为2020-9-23
-            function timestampToTime(timestamp) {
-               //时间戳为10位需*1000，时间戳为13位的话不需乘1000
-               var date = new Date(timestamp * 1000);
-               Y = date.getFullYear() + '-';
-               M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
-               D = date.getDate();
-               return Y+M+D;
             }
-    </script>
-    <!-- 时间控件 -->
-    <script>
-        //执行一个laydate实例
-        laydate.render({
-          elem: '#test' //指定元素
-        });
-    </script>
-  </body>
+        });//end get
+    }//end func
+
+    //时间戳转换为2020-9-23
+    function timestampToTime(timestamp) {
+        //时间戳为10位需*1000，时间戳为13位的话不需乘1000
+        var date = new Date(timestamp * 1000);
+        Y = date.getFullYear() + '-';
+        M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+        D = date.getDate();
+        return Y + M + D;
+    }
+</script>
+<!-- 时间控件 -->
+<script>
+    //执行一个laydate实例
+    laydate.render({
+        elem: '#test' //指定元素
+    });
+</script>
+</body>
 
 </html>

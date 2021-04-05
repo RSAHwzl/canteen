@@ -4,8 +4,9 @@ public class User {
     private String userName;
     private String passWord;
     private String email;
-    private int    birthday;
+    private int birthday;
     private String address;
+    private int auth;
 
     public String getUserName() {
         return userName;
@@ -45,5 +46,13 @@ public class User {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public int getAuth() {
+        return auth;
+    }
+
+    public void setAuth(int auth) {
+        this.auth = auth;
     }
 }

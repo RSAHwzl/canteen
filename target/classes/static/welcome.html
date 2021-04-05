@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./css/font.css">
     <link rel="stylesheet" href="./css/xadmin.css">
     <link rel="stylesheet" href="./css/bootstrap.css">
-    <script src="js/jquery-1.11.0.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="./js/xadmin.js"></script>
     <script src="js/echarts.min.js"></script>
     <script src="js/laydate.js"></script>
@@ -63,8 +63,8 @@
         $.ajax({
             type: "GET",
             async: false,
-            url: "http://47.98.145.221/getCanteenAll",
-            date: {date: time},
+            url: "http://127.0.0.1:8080/getCanteenAll",
+            data: {date: time},
             success: function (data) {
                 var t = 86400;
                 //计算横坐标
@@ -153,7 +153,7 @@
         myChart2.showLoading();
         $.ajax({
             type: "GET",
-            url: "http://47.98.145.221/getCanteenSum",
+            url: "http://127.0.0.1:8080/getCanteenSum",
             async: false,
             data: {date: time},
             success: function (data) {
@@ -210,16 +210,17 @@
                         yAxis: {gridIndex: 0},
                         grid: {top: '55%'},
                         series: [
-                            {type: 'line', smooth: true, seriesLayoutBy: 'row'},
-                            {type: 'line', smooth: true, seriesLayoutBy: 'row'},
-                            {type: 'line', smooth: true, seriesLayoutBy: 'row'},
-                            {type: 'line', smooth: true, seriesLayoutBy: 'row'},
-                            {type: 'line', smooth: true, seriesLayoutBy: 'row'},
+                            {type: 'line', smooth: true, seriesLayoutBy: 'row', emphasis: {focus: 'series'}},
+                            {type: 'line', smooth: true, seriesLayoutBy: 'row', emphasis: {focus: 'series'}},
+                            {type: 'line', smooth: true, seriesLayoutBy: 'row', emphasis: {focus: 'series'}},
+                            {type: 'line', smooth: true, seriesLayoutBy: 'row', emphasis: {focus: 'series'}},
+                            {type: 'line', smooth: true, seriesLayoutBy: 'row', emphasis: {focus: 'series'}},
                             {
                                 type: 'pie',
                                 id: 'pie',
                                 radius: '30%',
                                 center: ['50%', '25%'],
+                                emphasis: {focus: 'data'},
                                 label: {
                                     formatter: '{b}: {@2012} ({d}%)'
                                 },

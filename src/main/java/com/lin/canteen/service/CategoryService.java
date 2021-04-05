@@ -215,8 +215,8 @@ public class CategoryService {
         map7.put("num6",num7);
         map7.put("sum6",sum7);
         //获取所有份数，消费额
-        int num8=categories.stream().mapToInt(Category::getcNum).sum();
-        double sum8=categories.stream().mapToDouble(Category::getmSum).sum();
+        int num8=categories.parallelStream().mapToInt(Category::getcNum).sum();
+        double sum8=categories.parallelStream().mapToDouble(Category::getmSum).sum();
         sum8 = new BigDecimal(sum8).setScale(1, BigDecimal.ROUND_HALF_UP).doubleValue();
         map8.put("num",num8);
         map8.put("sum",sum8);
@@ -234,25 +234,25 @@ public class CategoryService {
     }
 
     public int getCategoryNum(ArrayList<Category> categories,int canteen,int window,int category){
-        return  categories.stream().filter(Category -> Category.getmCanteen() == canteen).
+        return  categories.parallelStream().filter(Category -> Category.getmCanteen() == canteen).
                 filter(Category -> Category.getmWindow() == window).
                 filter(Category->Category.getmCategory()==category).
                 mapToInt(Category::getcNum).sum();
     }
     public int getCategoryNumAll(ArrayList<Category> categories,int category){
-        return  categories.stream().filter(Category->Category.getmCategory()==category).
+        return  categories.parallelStream().filter(Category->Category.getmCategory()==category).
                 mapToInt(Category::getcNum).sum();
     }
 
     public double getCategorySum(ArrayList<Category> categories,int canteen,int window,int category){
-        double sum = categories.stream().filter(Category -> Category.getmCanteen() == canteen).
+        double sum = categories.parallelStream().filter(Category -> Category.getmCanteen() == canteen).
                 filter(Category -> Category.getmWindow() == window).
                 filter(Category->Category.getmCategory()==category).
                 mapToDouble(Category::getmSum).sum();
         return new BigDecimal(sum).setScale(1, BigDecimal.ROUND_HALF_UP).doubleValue();
     }
     public double getCategorySumAll(ArrayList<Category> categories,int category){
-        double sum = categories.stream().filter(Category->Category.getmCategory()==category).
+        double sum = categories.parallelStream().filter(Category->Category.getmCategory()==category).
                 mapToDouble(Category::getmSum).sum();
         return new BigDecimal(sum).setScale(1, BigDecimal.ROUND_HALF_UP).doubleValue();
     }

@@ -118,7 +118,6 @@ public final class CodeUtil {
         for (int i = 0; i < randomStrNum; i++) {
             randomStr = drawString(g, randomStr, i);
         }
-        System.out.println("随机字符："+randomStr);
         g.dispose();
         session.removeAttribute(sessionKey);
         session.setAttribute(sessionKey, randomStr);

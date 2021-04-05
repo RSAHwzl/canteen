@@ -69,8 +69,8 @@
         myChart.showLoading();
         $.ajax({
             type: "GET",
-            async: false,
-            url: "http://47.98.145.221/getFoodHot",
+            async: true,
+            url: "http://127.0.0.1:8080/getFoodHot",
             data: {date: time, canteen: 4, window: 1},
             success: function (data) {
                 day = timestampToTime(time);
@@ -173,8 +173,8 @@
         myChart2.showLoading();
         $.ajax({
             type: "GET",
-            async: false,
-            url: "http://47.98.145.221/getFoodHotWeek",
+            async: true,
+            url: "http://127.0.0.1:8080/getFoodHotWeek",
             data: {date: time, canteen: 4, window: 1, names: namesParam},
             success: function (result) {
                 var t = 86400;

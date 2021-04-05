@@ -71,7 +71,7 @@
                 $.ajax({
                    type:"GET",
                    async:false,
-                   url:"http://47.98.145.221/getFoodHot", 
+                   url:"http://127.0.0.1:8080/getFoodHot",
                    data:{ date:time,canteen:1,window:2 },
                    success:function(data){
                    day=timestampToTime(time);
@@ -167,7 +167,7 @@
                 $.ajax({
                    type:"GET",
                    async:false,
-                   url:"http://47.98.145.221/getFoodHotWeek", 
+                   url:"http://127.0.0.1:8080/getFoodHotWeek",
                    data:{ date:time,canteen:1,window:2,names:namesParam },
                    success:function(result){
                       var t=86400;

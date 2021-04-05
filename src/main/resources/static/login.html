@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <title></title>
-    <link rel="stylesheet" href="css/index.css"  />
+    <link rel="stylesheet" href="css/index.css"/>
     <script src="js/laydate.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 </head>
@@ -12,56 +12,63 @@
 <!-- 背景图片 -->
 <div class="mainbody middle">
 
-    <form class="form-box front">
+    <form class="form-box front" id="loginForm">
         <h2 class="font">cqucc login</h2>
-            <div>
-                <input class="input-normal" type="text" placeholder="UserAccount" id="loginUsr" />
-                <input class="input-normal" type="password" placeholder="PassWord" id="loginPass" />
+        <div>
+            <input class="input-normal" type="text" placeholder="UserAccount" id="loginUsr"/>
+            <input class="input-normal" type="password" placeholder="PassWord" id="loginPass"/>
 
-                <input class="input-code" placeholder="Code" id="loginCode" />
-                <img class="show-code" id="codeImg"  src="">
-                <button class="btn-submit" type="button" id="index">
-                    login
-                </button>
-
+            <input class="input-code" placeholder="Code" id="loginCode"/>
+            <img class="show-code" id="codeImg" src="">
+            <div class="input-auth">
+                <label class="input-auth-label"><input type="radio" name="auth" value="1">学生</label>
+                <label class="input-auth-label"><input type="radio" name="auth" value="999">管理员</label>
             </div>
+            <button class="btn-submit" type="button" id="index">
+                login
+            </button>
 
-            <div>
-                <p style="margin-top: 40px">If you don't have account.Please</p>
-                <p>Click here to <a id="signup">regist</a></p>
+        </div>
 
-                <script type="text/javascript">
-                    // 点击sigup触发翻转样式
-                    $("#signup").click(function() {
-                        $(".middle").toggleClass("middle-flip");
-                    });
-                </script>
+        <div>
+            <p style="margin-top: 40px">If you don't have account.Please</p>
+            <p>Click here to <a id="signup">regist</a></p>
 
-            </div>
+            <script type="text/javascript">
+                // 点击sigup触发翻转样式
+                $("#signup").click(function () {
+                    $(".middle").toggleClass("middle-flip");
+                });
+            </script>
+
+        </div>
     </form>
 
     <!-- 上下两个表单，一个front，一个back -->
     <form class="form-box back" id="registForm">
 
         <div>
-            <input class="input-normal" type="text" placeholder="UserAccount" id="usr" />
-            <input class="input-normal" type="password" placeholder="PassWord" id="pass" />
-            <input class="input-normal" type="password" placeholder="RePassWord" id="rePass" />
-            <input class="input-normal" type="email" placeholder="Email" id="eml" />
+            <input class="input-normal" type="text" placeholder="UserAccount" id="usr"/>
+            <input class="input-normal" type="password" placeholder="PassWord" id="pass"/>
+            <input class="input-normal" type="password" placeholder="RePassWord" id="rePass"/>
+            <input class="input-normal" type="email" placeholder="Email" id="eml"/>
             <input class="input-normal" placeholder="Birthday" id="test" readonly/>
-            <input class="input-normal" placeholder="Address" id="address" />
+            <input class="input-normal" placeholder="Address" id="address"/>
+            <div class="input-auth">
+                <label class="input-auth-label"><input type="radio" name="auth" value="1">学生</label>
+                <label class="input-auth-label"><input type="radio" name="auth" value="999">管理员</label>
+            </div>
             <button class="btn-submit" type="button" id="regist">
                 regist
             </button>
         </div>
 
         <div>
-            <p style="margin-top: 40px">Have a account ? You can</p>
-            <p>Click here to <a id="login">login</a></p>
+            <p style="margin-top: 25px">Have a account ? You can Click here to <a id="login">login</a></p>
 
             <script type="text/javascript">
                 // 点击login触发翻转样式
-                $("#login").click(function() {
+                $("#login").click(function () {
                     $(".middle").toggleClass("middle-flip");
                 });
             </script>
@@ -71,69 +78,79 @@
 </div>
 
 <script>
-    $(function(){
+    $(function () {
         $.ajax({
-            type:"GET",
-            async:false,
-            url:"http://47.98.145.221/getImg",
+            type: "GET",
+            async: false,
+            url: "http://127.0.0.1:8080/getImg",
             // xhrFields: {
             //     withCredentials: true
             // },
             // crossDomain: true,
-            success:function(data){
-                $("#codeImg").attr("src",data['url']);
+            success: function (data) {
+                $("#codeImg").attr("src", data['url']);
             }
         });//end ajax
     });
 
-    $('#codeImg').click(function(){
+    $('#codeImg').click(function () {
         $.ajax({
-            type:"GET",
-            async:false,
-            url:"http://47.98.145.221/getImg",
+            type: "GET",
+            async: false,
+            url: "http://127.0.0.1:8080/getImg",
             // xhrFields: {
             //     withCredentials: true
             // },
             // crossDomain: true,
-            success:function(data){
-                $("#codeImg").attr("src",data['url']);
+            success: function (data) {
+                $("#codeImg").attr("src", data['url']);
             }
         });//end ajax
     });
 
     //注册
-    $('#regist').click(function(){
+    $('#regist').click(function () {
         var username = $('#usr').val();
         var pass = $('#pass').val();
         var rePass = $('#rePass').val();
         var email = $('#eml').val();
         var day = $('#test').val();
         var address = $('#address').val();
+        var auth = $('input[name="auth"]:checked').val();
+        console.log(auth);
         //转换为时间戳
-        time =new Date(day)/1000;
+        time = new Date(day) / 1000;
 
-        if (username.length==0 || pass.length==0 || rePass.length==0 || email.length==0 || day.length==0 || address.length==0){
+        if (username.length == 0 || pass.length == 0 || rePass.length == 0 || email.length == 0 || day.length == 0 || address.length == 0 || auth.length == 0) {
             alert("注册信息不能为空！！！");
-        }else{
-            if(pass != rePass){
+        } else {
+            if (pass != rePass) {
                 alert("两次输入密码不一致！！！");
-            }else{
+            } else {
                 $.ajax({
-                    type:"GET",
-                    async:false,
-                    url:"http://47.98.145.221/regist",
+                    type: "GET",
+                    async: false,
+                    url: "http://127.0.0.1:8080/regist",
                     // xhrFields: {
                     //     withCredentials: true
                     // },
                     // crossDomain: true,
-                    data:{UserName:username,PassWord:pass,Email:email,birthday:time,Address:address},
-                    success:function(data){
-                        if (data==0){
+                    data: {
+                        UserName: username,
+                        PassWord: pass,
+                        Email: email,
+                        birthday: time,
+                        Address: address,
+                        Auth: auth
+                    },
+                    success: function (data) {
+                        console.log(data)
+                        if (data == 0) {
                             alert("用户名已存在,请重新注册！！！");
                             $('#registForm')[0].reset();
-                        }else{
+                        } else {
                             alert("注册成功！");
-                            window.location.href = "http://47.98.145.221/login.html";
+                            window.location.href = "http://127.0.0.1:8080/login.html";
                         }
                     }//end func(data)
 
@@ -146,32 +163,32 @@
     });
 
     //登录
-    $('#index').click(function(){
+    $('#index').click(function () {
         var username = $('#loginUsr').val();
         var pass = $('#loginPass').val();
         var code = $('#loginCode').val();
-        if (username.length==0 || pass.length==0 || code.length==0){
+        var auth = $('input[name="auth"]:checked').val();
+        if (username.length == 0 || pass.length == 0 || code.length == 0 || auth.length == 0) {
             alert("登录信息不能为空！！！");
-        }else{
+        } else {
             $.ajax({
-                type:"GET",
-                async:false,
-                url:"http://47.98.145.221/toLogin",
+                type: "GET",
+                async: false,
+                url: "http://127.0.0.1:8080/toLogin",
                 // xhrFields: {
                 //     withCredentials: true
                 // },
                 // crossDomain: true,
-                data:{UserName:username,PassWord:pass,Code:code},
-                success:function(data){
-                    if (data==0){
+                data: {UserName: username, PassWord: pass, Code: code, Auth: auth},
+                success: function (data) {
+                    if (data == 0) {
                         alert("密码或验证码错误！！！");
-                        $('#registForm')[0].reset();
-                    }else{
+                        $('#loginForm')[0].reset();
+                    } else {
                         alert("登录成功！");
-                        window.location.href = "http://47.98.145.221/index";
+                        window.location.href = "http://127.0.0.1:8080/index";
                     }
                 }//end func(data)
-
             });//end ajax
         }
 

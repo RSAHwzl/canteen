@@ -25,11 +25,11 @@ public class FoodService {
             HashMap<String,Integer> food=new HashMap<>();
             ArrayList<Food> foods=new ArrayList<>();
             foods=consumeMapper.findFoodHotByDate(date,canteen,window);
-            int sum1 = foods.stream().filter(Food -> Food.getmName().equals(names[0])).
+            int sum1 = foods.parallelStream().filter(Food -> Food.getmName().equals(names[0])).
                     mapToInt(Food::getcNum).sum();
-            int sum2 = foods.stream().filter(Food -> Food.getmName().equals(names[1])).
+            int sum2 = foods.parallelStream().filter(Food -> Food.getmName().equals(names[1])).
                     mapToInt(Food::getcNum).sum();
-            int sum3 = foods.stream().filter(Food -> Food.getmName().equals(names[2])).
+            int sum3 = foods.parallelStream().filter(Food -> Food.getmName().equals(names[2])).
                     mapToInt(Food::getcNum).sum();
             food.put(names[0],sum1);
             food.put(names[1],sum2);
