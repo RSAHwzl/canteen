@@ -13,6 +13,16 @@ spring:
 #mybatis:
 #  configuration:
 #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  redis:
+    host: 47.98.145.221
+    port: 6379
+    password:
+    jedis:
+      pool:
+        max-active: 100
+        max-idle: 10
+        max-wait: 10000
+    database: 0
 #端口配置
 server:
   port: 8080

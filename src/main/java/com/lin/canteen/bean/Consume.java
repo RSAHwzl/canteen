@@ -5,16 +5,29 @@ public class Consume {
     private int mId;
     private int cNum;
     private int cDate;
-    private Menu menu; //映射对象，用于联表查询
+    private int cDelivery;
+    private int cMale;
+    private float mSum;
+    private String mName;
+    private float mPrice;
+    private int mWindow;
+    private int mCanteen;
+    private int mCategory;
 
-    @Override
-    public String toString() {
-        return "Consume{" +
-                "mId=" + mId +
-                ", cNum=" + cNum +
-                ", cDate=" + cDate +
-                ", menu=" + menu +
-                '}';
+    public int getcDelivery() {
+        return cDelivery;
+    }
+
+    public void setcDelivery(int cDelivery) {
+        this.cDelivery = cDelivery;
+    }
+
+    public int getcMale() {
+        return cMale;
+    }
+
+    public void setcMale(int cMale) {
+        this.cMale = cMale;
     }
 
     public int getmId() {
@@ -41,7 +54,51 @@ public class Consume {
         this.cDate = cDate;
     }
 
-    public Menu getMenu() { return menu; }
+    public float getmSum() {
+        return cNum * mPrice;
+    }
 
-    public void setMenu(Menu menu) { this.menu = menu; }
+    public void setmSum(float mSum) {
+        this.mSum = mSum;
+    }
+
+    public String getmName() {
+        return mName;
+    }
+
+    public void setmName(String mName) {
+        this.mName = mName;
+    }
+
+    public float getmPrice() {
+        return mPrice;
+    }
+
+    public void setmPrice(float mPrice) {
+        this.mPrice = mPrice;
+    }
+
+    public int getmWindow() {
+        return mWindow;
+    }
+
+    public void setmWindow(int mWindow) {
+        this.mWindow = mWindow;
+    }
+
+    public int getmCanteen() {
+        return mCanteen;
+    }
+
+    public void setmCanteen(int mCanteen) {
+        this.mCanteen = mCanteen;
+    }
+
+    public int getmCategory() {
+        return mCategory;
+    }
+
+    public void setmCategory(int mCategory) {
+        this.mCategory = mCategory;
+    }
 }

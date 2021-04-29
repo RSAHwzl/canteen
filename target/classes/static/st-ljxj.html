@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./css/bootstrap.css">
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="./js/xadmin.js"></script>
-    <script src="js/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
     <script src="js/laydate.js"></script>
     <script src="js/bootstrap.js"></script>
     <script type="text/javascript" src="./lib/layui/layui.js" charset="utf-8"></script>
@@ -40,6 +40,12 @@
         <div class="layui-col-md6 layui-col-sm6 layui-col-xs12 ">
             <div id="main2" style="width: 100%;height: 500px"></div>
         </div>
+        <div class="layui-col-md6 layui-col-sm6 layui-col-xs12 ">
+            <div id="main3" style="width: 100%;height: 500px"></div>
+        </div>
+        <div class="layui-col-md6 layui-col-sm6 layui-col-xs12 ">
+            <div id="main4" style="width: 100%;height: 500px"></div>
+        </div>
     </div>
 </div>
 
@@ -65,10 +71,12 @@
     function getData(time) {
         var myChart = echarts.init(document.getElementById('main'));
         var myChart2 = echarts.init(document.getElementById('main2'));
+        var myChart3 = echarts.init(document.getElementById('main3'));
+        var myChart4 = echarts.init(document.getElementById('main4'));
         myChart.showLoading();
         $.ajax({
             type: "GET",
-            url: "http://127.0.0.1:8080/getLjSum",
+            url: "http://127.0.0.1:8080/getLjNum",
             async: true,
             data: {date: time},
             success: function (data) {
@@ -91,6 +99,9 @@
                 var day7 = data[time - 6 * t];
                 // 指定图表的配置项和数据
                 option = {
+                    title: {
+                        text: '林间小聚销售份额占比',
+                    },
                     tooltip: {
                         trigger: 'axis',
                         axisPointer: {
@@ -146,6 +157,9 @@
                             type: 'line',
                             stack: '总量',
                             areaStyle: {},
+                            emphasis: {
+                                focus: 'series'
+                            },
                             data: [day7[1], day6[1], day5[1], day4[1], day3[1], day2[1], day1[1]]
                         },
                         {
@@ -153,6 +167,9 @@
                             type: 'line',
                             stack: '总量',
                             areaStyle: {},
+                            emphasis: {
+                                focus: 'series'
+                            },
                             data: [day7[2], day6[2], day5[2], day4[2], day3[2], day2[2], day1[2]]
                         },
                         {
@@ -160,6 +177,9 @@
                             type: 'line',
                             stack: '总量',
                             areaStyle: {},
+                            emphasis: {
+                                focus: 'series'
+                            },
                             data: [day7[3], day6[3], day5[3], day4[3], day3[3], day2[3], day1[3]]
                         },
                         {
@@ -167,6 +187,9 @@
                             type: 'line',
                             stack: '总量',
                             areaStyle: {},
+                            emphasis: {
+                                focus: 'series'
+                            },
                             data: [day7[4], day6[4], day5[4], day4[4], day3[4], day2[4], day1[4]]
                         },
                         {
@@ -174,6 +197,9 @@
                             type: 'line',
                             stack: '总量',
                             areaStyle: {},
+                            emphasis: {
+                                focus: 'series'
+                            },
                             data: [day7[5], day6[5], day5[5], day4[5], day3[5], day2[5], day1[5]]
                         },
                         {
@@ -181,6 +207,9 @@
                             type: 'line',
                             stack: '总量',
                             areaStyle: {},
+                            emphasis: {
+                                focus: 'series'
+                            },
                             data: [day7[6], day6[6], day5[6], day4[6], day3[6], day2[6], day1[6]]
                         },
                         {
@@ -194,6 +223,9 @@
                                 }
                             },
                             areaStyle: {},
+                            emphasis: {
+                                focus: 'series'
+                            },
                             data: [day7[7], day6[7], day5[7], day4[7], day3[7], day2[7], day1[7]]
                         }
                     ]
@@ -233,6 +265,9 @@
                 var day7 = data[time - 6 * t];
                 setTimeout(function () {
                     option2 = {
+                        title: {
+                            text: '林间小聚销售额',
+                        },
                         tooltip: {
                             trigger: 'axis'
                         },
@@ -277,6 +312,9 @@
                                 name: '哈喽米线',
                                 type: 'line',
                                 stack: '6000',
+                                emphasis: {
+                                    focus: 'series'
+                                },
                                 data: [day7[1], day6[1], day5[1], day4[1], day3[1], day2[1], day1[1]],
                                 label: {
                                     normal: {
@@ -289,6 +327,9 @@
                                 name: '套饭系列',
                                 type: 'line',
                                 stack: '12000',
+                                emphasis: {
+                                    focus: 'series'
+                                },
                                 data: [day7[2], day6[2], day5[2], day4[2], day3[2], day2[2], day1[2]],
                                 label: {
                                     normal: {
@@ -301,6 +342,9 @@
                                 name: '如意家常小炒',
                                 type: 'line',
                                 stack: '18000',
+                                emphasis: {
+                                    focus: 'series'
+                                },
                                 data: [day7[3], day6[3], day5[3], day4[3], day3[3], day2[3], day1[3]],
                                 label: {
                                     normal: {
@@ -313,6 +357,9 @@
                                 name: '刘嬢嬢豌杂面',
                                 type: 'line',
                                 stack: '24000',
+                                emphasis: {
+                                    focus: 'series'
+                                },
                                 data: [day7[4], day6[4], day5[4], day4[4], day3[4], day2[4], day1[4]],
                                 label: {
                                     normal: {
@@ -325,6 +372,9 @@
                                 name: '乔园里包子铺',
                                 type: 'line',
                                 stack: '30000',
+                                emphasis: {
+                                    focus: 'series'
+                                },
                                 data: [day7[5], day6[5], day5[5], day4[5], day3[5], day2[5], day1[5]],
                                 label: {
                                     normal: {
@@ -337,6 +387,9 @@
                                 name: '麻辣香锅',
                                 type: 'line',
                                 stack: '36000',
+                                emphasis: {
+                                    focus: 'series'
+                                },
                                 data: [day7[6], day6[6], day5[6], day4[6], day3[6], day2[6], day1[6]],
                                 label: {
                                     normal: {
@@ -349,6 +402,9 @@
                                 name: '掉渣饼',
                                 type: 'line',
                                 stack: '42000',
+                                emphasis: {
+                                    focus: 'series'
+                                },
                                 data: [day7[7], day6[7], day5[7], day4[7], day3[7], day2[7], day1[7]],
                                 label: {
                                     normal: {
@@ -371,6 +427,483 @@
                 });//end func(data)
             }
         });//end ajax
+
+        myChart3.showLoading();
+        $.ajax({
+            type: "GET",
+            url: "http://127.0.0.1:8080/getLjDelivery",
+            async: true,
+            data: {date: time},
+            success: function (data) {
+                var t = 86400;
+                //计算横坐标
+                xday1 = timestampToTime(time);
+                xday2 = timestampToTime(time - t);
+                xday3 = timestampToTime(time - 2 * t);
+                xday4 = timestampToTime(time - 3 * t);
+                xday5 = timestampToTime(time - 4 * t);
+                xday6 = timestampToTime(time - 5 * t);
+                xday7 = timestampToTime(time - 6 * t);
+                //获取value
+                var day1 = data[time];
+                var day2 = data[time - t];
+                var day3 = data[time - 2 * t];
+                var day4 = data[time - 3 * t];
+                var day5 = data[time - 4 * t];
+                var day6 = data[time - 5 * t];
+                var day7 = data[time - 6 * t];
+                // 指定图表的配置项和数据
+                option3 = {
+                    title: {
+                        text: '林间小聚就餐/外卖份数对比',
+                    },
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                            type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                        }
+                    },
+                    legend: {
+                        x: '225',
+                        data: ['哈喽米线就餐', '套饭系列就餐', '如意家常小炒就餐', '刘嬢嬢豌杂面就餐', '乔园里包子铺就餐', '麻辣香锅就餐', '掉渣饼就餐', '份数差',
+                            '哈喽米线外卖', '套饭系列外卖', '如意家常小炒外卖', '刘嬢嬢豌杂面外卖', '乔园里包子铺外卖', '麻辣香锅外卖', '掉渣饼外卖']
+                    },
+                    grid: {
+                        left: '3%',
+                        right: '4%',
+                        bottom: '3%',
+                        containLabel: true
+                    },
+                    xAxis: [
+                        {
+                            type: 'value'
+                        }
+                    ],
+                    yAxis: [
+                        {
+                            type: 'category',
+                            axisTick: {
+                                show: false
+                            },
+                            data: [xday7, xday6, xday5, xday4, xday3, xday2, xday1]
+                        }
+                    ],
+                    series: [
+                        {
+                            name: '份数差',
+                            type: 'bar',
+                            label: {
+                                show: true,
+                                position: 'inside'
+                            },
+                            emphasis: {
+                                focus: 'series'
+                            },
+                            data: [day7[1][3] + day7[2][3] + day7[3][3] + day7[4][3] + day7[5][3] + day7[6][3] + day7[7][3],
+                                day6[1][3] + day6[2][3] + day6[3][3] + day6[4][3] + day6[5][3] + day6[6][3] + day6[7][3],
+                                day5[1][3] + day5[2][3] + day5[3][3] + day5[4][3] + day5[5][3] + day5[6][3] + day5[7][3],
+                                day4[1][3] + day4[2][3] + day4[3][3] + day4[4][3] + day4[5][3] + day4[6][3] + day4[7][3],
+                                day3[1][3] + day3[2][3] + day3[3][3] + day3[4][3] + day3[5][3] + day3[6][3] + day3[7][3],
+                                day2[1][3] + day2[2][3] + day2[3][3] + day2[4][3] + day2[5][3] + day2[6][3] + day2[7][3],
+                                day1[1][3] + day1[2][3] + day1[3][3] + day1[4][3] + day1[5][3] + day1[6][3] + day1[7][3]
+                            ]
+                        },
+                        {
+                            name: '哈喽米线就餐',
+                            type: 'bar',
+                            stack: '总量',
+                            label: {
+                                show: true
+                            },
+                            emphasis: {
+                                focus: 'series'
+                            },
+                            data: [day7[1][1], day6[1][1], day5[1][1], day4[1][1], day3[1][1], day2[1][1], day1[1][1]]
+                        },
+                        {
+                            name: '套饭系列就餐',
+                            type: 'bar',
+                            stack: '总量',
+                            label: {
+                                show: true
+                            },
+                            emphasis: {
+                                focus: 'series'
+                            },
+                            data: [day7[2][1], day6[2][1], day5[2][1], day4[2][1], day3[2][1], day2[2][1], day1[2][1]]
+                        },
+                        {
+                            name: '如意家常小炒就餐',
+                            type: 'bar',
+                            stack: '总量',
+                            label: {
+                                show: true
+                            },
+                            emphasis: {
+                                focus: 'series'
+                            },
+                            data: [day7[3][1], day6[3][1], day5[3][1], day4[3][1], day3[3][1], day2[3][1], day1[3][1]]
+                        },
+                        {
+                            name: '刘嬢嬢豌杂面就餐',
+                            type: 'bar',
+                            stack: '总量',
+                            label: {
+                                show: true
+                            },
+                            emphasis: {
+                                focus: 'series'
+                            },
+                            data: [day7[4][1], day6[4][1], day5[4][1], day4[4][1], day3[4][1], day2[4][1], day1[4][1]]
+                        },
+                        {
+                            name: '乔园里包子铺就餐',
+                            type: 'bar',
+                            stack: '总量',
+                            label: {
+                                show: true
+                            },
+                            emphasis: {
+                                focus: 'series'
+                            },
+                            data: [day7[5][1], day6[5][1], day5[5][1], day4[5][1], day3[5][1], day2[5][1], day1[5][1]]
+                        },
+                        {
+                            name: '麻辣香锅就餐',
+                            type: 'bar',
+                            stack: '总量',
+                            label: {
+                                show: true
+                            },
+                            emphasis: {
+                                focus: 'series'
+                            },
+                            data: [day7[6][1], day6[6][1], day5[6][1], day4[6][1], day3[6][1], day2[6][1], day1[6][1]]
+                        },
+                        {
+                            name: '掉渣饼就餐',
+                            type: 'bar',
+                            stack: '总量',
+                            label: {
+                                show: true
+                            },
+                            emphasis: {
+                                focus: 'series'
+                            },
+                            data: [day7[7][1], day6[7][1], day5[7][1], day4[7][1], day3[7][1], day2[7][1], day1[7][1]]
+                        },
+                        {
+                            name: '哈喽米线外卖',
+                            type: 'bar',
+                            stack: '总量',
+                            label: {
+                                show: true,
+                                position: 'left'
+                            },
+                            emphasis: {
+                                focus: 'series'
+                            },
+                            data: [-day7[1][2], -day6[1][2], -day5[1][2], -day4[1][2], -day3[1][2], -day2[1][2], -day1[1][2]]
+                        },
+                        {
+                            name: '套饭系列外卖',
+                            type: 'bar',
+                            stack: '总量',
+                            label: {
+                                show: true,
+                                position: 'left'
+                            },
+                            emphasis: {
+                                focus: 'series'
+                            },
+                            data: [-day7[2][2], -day6[2][2], -day5[2][2], -day4[2][2], -day3[2][2], -day2[2][2], -day1[2][2]]
+                        },
+                        {
+                            name: '如意家常小炒外卖',
+                            type: 'bar',
+                            stack: '总量',
+                            label: {
+                                show: true,
+                                position: 'left'
+                            },
+                            emphasis: {
+                                focus: 'series'
+                            },
+                            data: [-day7[3][2], -day6[3][2], -day5[3][2], -day4[3][2], -day3[3][2], -day2[3][2], -day1[3][2]]
+                        },
+                        {
+                            name: '刘嬢嬢豌杂面外卖',
+                            type: 'bar',
+                            stack: '总量',
+                            label: {
+                                show: true,
+                                position: 'left'
+                            },
+                            emphasis: {
+                                focus: 'series'
+                            },
+                            data: [-day7[4][2], -day6[4][2], -day5[4][2], -day4[4][2], -day3[4][2], -day2[4][2], -day1[4][2]]
+                        },
+                        {
+                            name: '乔园里包子铺外卖',
+                            type: 'bar',
+                            stack: '总量',
+                            label: {
+                                show: true,
+                                position: 'left'
+                            },
+                            emphasis: {
+                                focus: 'series'
+                            },
+                            data: [-day7[5][2], -day6[5][2], -day5[5][2], -day4[5][2], -day3[5][2], -day2[5][2], -day1[5][2]]
+                        },
+                        {
+                            name: '麻辣香锅外卖',
+                            type: 'bar',
+                            stack: '总量',
+                            label: {
+                                show: true,
+                                position: 'left'
+                            },
+                            emphasis: {
+                                focus: 'series'
+                            },
+                            data: [-day7[6][2], -day6[6][2], -day5[6][2], -day4[6][2], -day3[6][2], -day2[6][2], -day1[6][2]]
+                        },
+                        {
+                            name: '掉渣饼外卖',
+                            type: 'bar',
+                            stack: '总量',
+                            label: {
+                                show: true,
+                                position: 'left'
+                            },
+                            emphasis: {
+                                focus: 'series'
+                            },
+                            data: [-day7[7][2], -day6[7][2], -day5[7][2], -day4[7][2], -day3[7][2], -day2[7][2], -day1[7][2]]
+                        },
+                    ]
+                };
+                myChart3.hideLoading();
+                // 使用刚指定的配置项和数据显示图表。
+                myChart3.setOption(option3);
+            }
+        });
+
+        myChart4.showLoading();
+        $.ajax({
+            type: "GET",
+            url: "http://127.0.0.1:8080/getLjMale",
+            async: true,
+            data: {date: time},
+            success: function (data) {
+                var t = 86400;
+                //计算横坐标
+                xday1 = timestampToTime(time);
+                xday2 = timestampToTime(time - t);
+                xday3 = timestampToTime(time - 2 * t);
+                xday4 = timestampToTime(time - 3 * t);
+                xday5 = timestampToTime(time - 4 * t);
+                xday6 = timestampToTime(time - 5 * t);
+                xday7 = timestampToTime(time - 6 * t);
+                //获取value
+                var day1 = data[time];
+                var day2 = data[time - t];
+                var day3 = data[time - 2 * t];
+                var day4 = data[time - 3 * t];
+                var day5 = data[time - 4 * t];
+                var day6 = data[time - 5 * t];
+                var day7 = data[time - 6 * t];
+                // 指定图表的配置项和数据
+                option4 = {
+                    title: {
+                        text: '林间小聚男生/女生份数对比',
+                    },
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                            type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                        }
+                    },
+                    legend: {
+                        x: '225',
+                        data: ['二刀面庄-女', '奇妙干锅-女', '盖饭炒饭-女', '小炒-女', '套饭-女', '份数差',
+                            '二刀面庄-男', '奇妙干锅-男', '盖饭炒饭-男', '小炒-男', '套饭-男']
+                    },
+                    grid: {
+                        left: '3%',
+                        right: '4%',
+                        bottom: '3%',
+                        containLabel: true
+                    },
+                    xAxis: [
+                        {
+                            type: 'value'
+                        }
+                    ],
+                    yAxis: [
+                        {
+                            type: 'category',
+                            axisTick: {
+                                show: false
+                            },
+                            data: [xday7, xday6, xday5, xday4, xday3, xday2, xday1]
+                        }
+                    ],
+                    series: [
+                        {
+                            name: '份数差',
+                            type: 'bar',
+                            label: {
+                                show: true,
+                                position: 'inside'
+                            },
+                            emphasis: {
+                                focus: 'series'
+                            },
+                            data: [day7[1][3] + day7[2][3] + day7[3][3] + day7[4][3] + day7[5][3] + day7[6][3] + day7[7][3],
+                                day6[1][3] + day6[2][3] + day6[3][3] + day6[4][3] + day6[5][3] + day6[6][3] + day6[7][3],
+                                day5[1][3] + day5[2][3] + day5[3][3] + day5[4][3] + day5[5][3] + day5[6][3] + day5[7][3],
+                                day4[1][3] + day4[2][3] + day4[3][3] + day4[4][3] + day4[5][3] + day4[6][3] + day4[7][3],
+                                day3[1][3] + day3[2][3] + day3[3][3] + day3[4][3] + day3[5][3] + day3[6][3] + day3[7][3],
+                                day2[1][3] + day2[2][3] + day2[3][3] + day2[4][3] + day2[5][3] + day2[6][3] + day2[7][3],
+                                day1[1][3] + day1[2][3] + day1[3][3] + day1[4][3] + day1[5][3] + day1[6][3] + day1[7][3]
+                            ]
+                        },
+                        {
+                            name: '二刀面庄-女',
+                            type: 'bar',
+                            stack: '总量',
+                            label: {
+                                show: true
+                            },
+                            emphasis: {
+                                focus: 'series'
+                            },
+                            data: [day7[1][1], day6[1][1], day5[1][1], day4[1][1], day3[1][1], day2[1][1], day1[1][1]]
+                        },
+                        {
+                            name: '奇妙干锅-女',
+                            type: 'bar',
+                            stack: '总量',
+                            label: {
+                                show: true
+                            },
+                            emphasis: {
+                                focus: 'series'
+                            },
+                            data: [day7[2][1], day6[2][1], day5[2][1], day4[2][1], day3[2][1], day2[2][1], day1[2][1]]
+                        },
+                        {
+                            name: '盖饭炒饭-女',
+                            type: 'bar',
+                            stack: '总量',
+                            label: {
+                                show: true
+                            },
+                            emphasis: {
+                                focus: 'series'
+                            },
+                            data: [day7[3][1], day6[3][1], day5[3][1], day4[3][1], day3[3][1], day2[3][1], day1[3][1]]
+                        },
+                        {
+                            name: '小炒-女',
+                            type: 'bar',
+                            stack: '总量',
+                            label: {
+                                show: true
+                            },
+                            emphasis: {
+                                focus: 'series'
+                            },
+                            data: [day7[4][1], day6[4][1], day5[4][1], day4[4][1], day3[4][1], day2[4][1], day1[4][1]]
+                        },
+                        {
+                            name: '套饭-女',
+                            type: 'bar',
+                            stack: '总量',
+                            label: {
+                                show: true
+                            },
+                            emphasis: {
+                                focus: 'series'
+                            },
+                            data: [day7[5][1], day6[5][1], day5[5][1], day4[5][1], day3[5][1], day2[5][1], day1[5][1]]
+                        },
+                        {
+                            name: '二刀面庄-男',
+                            type: 'bar',
+                            stack: '总量',
+                            label: {
+                                show: true,
+                                position: 'left'
+                            },
+                            emphasis: {
+                                focus: 'series'
+                            },
+                            data: [-day7[1][2], -day6[1][2], -day5[1][2], -day4[1][2], -day3[1][2], -day2[1][2], -day1[1][2]]
+                        },
+                        {
+                            name: '奇妙干锅-男',
+                            type: 'bar',
+                            stack: '总量',
+                            label: {
+                                show: true,
+                                position: 'left'
+                            },
+                            emphasis: {
+                                focus: 'series'
+                            },
+                            data: [-day7[2][2], -day6[2][2], -day5[2][2], -day4[2][2], -day3[2][2], -day2[2][2], -day1[2][2]]
+                        },
+                        {
+                            name: '盖饭炒饭-男',
+                            type: 'bar',
+                            stack: '总量',
+                            label: {
+                                show: true,
+                                position: 'left'
+                            },
+                            emphasis: {
+                                focus: 'series'
+                            },
+                            data: [-day7[3][2], -day6[3][2], -day5[3][2], -day4[3][2], -day3[3][2], -day2[3][2], -day1[3][2]]
+                        },
+                        {
+                            name: '小炒-男',
+                            type: 'bar',
+                            stack: '总量',
+                            label: {
+                                show: true,
+                                position: 'left'
+                            },
+                            emphasis: {
+                                focus: 'series'
+                            },
+                            data: [-day7[4][2], -day6[4][2], -day5[4][2], -day4[4][2], -day3[4][2], -day2[4][2], -day1[4][2]]
+                        },
+                        {
+                            name: '套饭-男',
+                            type: 'bar',
+                            stack: '总量',
+                            label: {
+                                show: true,
+                                position: 'left'
+                            },
+                            emphasis: {
+                                focus: 'series'
+                            },
+                            data: [-day7[5][2], -day6[5][2], -day5[5][2], -day4[5][2], -day3[5][2], -day2[5][2], -day1[5][2]]
+                        }
+                    ]
+                };
+                myChart4.hideLoading();
+                // 使用刚指定的配置项和数据显示图表。
+                myChart4.setOption(option4);
+            }
+        });
+
     }//end func
 
     //时间戳转换为2020-9-23

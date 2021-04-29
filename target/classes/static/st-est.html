@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./css/bootstrap.css">
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="./js/xadmin.js"></script>
-    <script src="js/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
     <script src="js/laydate.js"></script>
     <script src="js/bootstrap.js"></script>
     <script type="text/javascript" src="./lib/layui/layui.js" charset="utf-8"></script>
@@ -67,7 +67,7 @@
         myChart.showLoading();
         $.ajax({
             type: "GET",
-            url: "http://127.0.0.1:8080/getEstSum",
+            url: "http://127.0.0.1:8080/getEstNum",
             async: true,
             data: {date: time},
             success: function (data) {
@@ -90,6 +90,9 @@
                 var day7 = data[time - 6 * t];
                 // 指定图表的配置项和数据
                 option = {
+                    title: {
+                        text: '二食堂销售份额占比',
+                    },
                     tooltip: {
                         trigger: 'axis',
                         axisPointer: {
@@ -145,6 +148,9 @@
                             type: 'line',
                             stack: '总量',
                             areaStyle: {},
+                            emphasis: {
+                                focus: 'series'
+                            },
                             data: [day7[1], day6[1], day5[1], day4[1], day3[1], day2[1], day1[1]]
                         },
                         {
@@ -152,6 +158,9 @@
                             type: 'line',
                             stack: '总量',
                             areaStyle: {},
+                            emphasis: {
+                                focus: 'series'
+                            },
                             data: [day7[2], day6[2], day5[2], day4[2], day3[2], day2[2], day1[2]]
                         },
                         {
@@ -159,6 +168,9 @@
                             type: 'line',
                             stack: '总量',
                             areaStyle: {},
+                            emphasis: {
+                                focus: 'series'
+                            },
                             data: [day7[3], day6[3], day5[3], day4[3], day3[3], day2[3], day1[3]]
                         },
                         {
@@ -166,6 +178,9 @@
                             type: 'line',
                             stack: '总量',
                             areaStyle: {},
+                            emphasis: {
+                                focus: 'series'
+                            },
                             data: [day7[4], day6[4], day5[4], day4[4], day3[4], day2[4], day1[4]]
                         },
                         {
@@ -173,6 +188,9 @@
                             type: 'line',
                             stack: '总量',
                             areaStyle: {},
+                            emphasis: {
+                                focus: 'series'
+                            },
                             data: [day7[5], day6[5], day5[5], day4[5], day3[5], day2[5], day1[5]]
                         },
                         {
@@ -180,6 +198,9 @@
                             type: 'line',
                             stack: '总量',
                             areaStyle: {},
+                            emphasis: {
+                                focus: 'series'
+                            },
                             data: [day7[6], day6[6], day5[6], day4[6], day3[6], day2[6], day1[6]]
                         },
                         {
@@ -193,6 +214,9 @@
                                 }
                             },
                             areaStyle: {},
+                            emphasis: {
+                                focus: 'series'
+                            },
                             data: [day7[7], day6[7], day5[7], day4[7], day3[7], day2[7], day1[7]]
                         }
                     ]
@@ -232,6 +256,9 @@
                 var day7 = data[time - 6 * t];
                 setTimeout(function () {
                     option2 = {
+                        title: {
+                            text: '二食堂销售额',
+                        },
                         tooltip: {
                             trigger: 'axis'
                         },
@@ -276,6 +303,9 @@
                                 name: '特色炒饭',
                                 type: 'line',
                                 stack: '6000',
+                                emphasis: {
+                                    focus: 'series'
+                                },
                                 data: [day7[1], day6[1], day5[1], day4[1], day3[1], day2[1], day1[1]],
                                 label: {
                                     normal: {
@@ -288,6 +318,9 @@
                                 name: '煲仔蛋包饭',
                                 type: 'line',
                                 stack: '12000',
+                                emphasis: {
+                                    focus: 'series'
+                                },
                                 data: [day7[2], day6[2], day5[2], day4[2], day3[2], day2[2], day1[2]],
                                 label: {
                                     normal: {
@@ -300,6 +333,9 @@
                                 name: '牛肉饭',
                                 type: 'line',
                                 stack: '18000',
+                                emphasis: {
+                                    focus: 'series'
+                                },
                                 data: [day7[3], day6[3], day5[3], day4[3], day3[3], day2[3], day1[3]],
                                 label: {
                                     normal: {
@@ -312,6 +348,9 @@
                                 name: '营养早餐',
                                 type: 'line',
                                 stack: '24000',
+                                emphasis: {
+                                    focus: 'series'
+                                },
                                 data: [day7[4], day6[4], day5[4], day4[4], day3[4], day2[4], day1[4]],
                                 label: {
                                     normal: {
@@ -324,6 +363,9 @@
                                 name: '老麻抄手',
                                 type: 'line',
                                 stack: '30000',
+                                emphasis: {
+                                    focus: 'series'
+                                },
                                 data: [day7[5], day6[5], day5[5], day4[5], day3[5], day2[5], day1[5]],
                                 label: {
                                     normal: {
@@ -336,6 +378,9 @@
                                 name: '酱香饼',
                                 type: 'line',
                                 stack: '36000',
+                                emphasis: {
+                                    focus: 'series'
+                                },
                                 data: [day7[6], day6[6], day5[6], day4[6], day3[6], day2[6], day1[6]],
                                 label: {
                                     normal: {
@@ -348,6 +393,9 @@
                                 name: '好粥道',
                                 type: 'line',
                                 stack: '42000',
+                                emphasis: {
+                                    focus: 'series'
+                                },
                                 data: [day7[7], day6[7], day5[7], day4[7], day3[7], day2[7], day1[7]],
                                 label: {
                                     normal: {

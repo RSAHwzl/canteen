@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 @RestController
-public class FoodController {
+public class WindowsController {
     @Autowired
     FoodService foodService;
 

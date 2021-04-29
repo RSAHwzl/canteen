@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./css/bootstrap.css">
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="./js/xadmin.js"></script>
-    <script src="js/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
     <script src="js/laydate.js"></script>
     <script src="js/bootstrap.js"></script>
     <script type="text/javascript" src="./lib/layui/layui.js" charset="utf-8"></script>
@@ -31,7 +31,13 @@
             <div id="main" style="width: 100%;height: 500px"></div>
         </div>
         <div class="layui-col-md6 layui-col-sm6 layui-col-xs12 ">
-            <div id="main2" style="width: 100%;height: 490px"></div>
+            <div id="main2" style="width: 100%;height: 500px"></div>
+        </div>
+        <div class="layui-col-md6 layui-col-sm6 layui-col-xs12 ">
+            <div id="main3" style="width: 100%;height: 500px"></div>
+        </div>
+        <div class="layui-col-md6 layui-col-sm6 layui-col-xs12 ">
+            <div id="main4" style="width: 100%;height: 500px"></div>
         </div>
     </div>
 </div>
@@ -59,10 +65,12 @@
     function getData(time) {
         var myChart = echarts.init(document.getElementById('main'));
         var myChart2 = echarts.init(document.getElementById('main2'));
+        var myChart3 = echarts.init(document.getElementById('main3'));
+        var myChart4 = echarts.init(document.getElementById('main4'));
         myChart.showLoading();
         $.ajax({
             type: "GET",
-            async: false,
+            async: true,
             url: "http://127.0.0.1:8080/getCanteenAll",
             data: {date: time},
             success: function (data) {
@@ -154,7 +162,7 @@
         $.ajax({
             type: "GET",
             url: "http://127.0.0.1:8080/getCanteenSum",
-            async: false,
+            async: true,
             data: {date: time},
             success: function (data) {
                 var t = 86400;
@@ -256,6 +264,186 @@
                 });//end set
             } //end func(data)
         });//end ajax
+
+        //第三个表
+        myChart3.showLoading();
+        $.ajax({
+            type: "GET",
+            async: true,
+            url: "http://127.0.0.1:8080/getCanteenDelivery",
+            data: {date: time},
+            success: function (data) {
+                var t = 86400;
+                //计算横坐标
+                xday1 = timestampToTime(time);
+                xday2 = timestampToTime(time - t);
+                xday3 = timestampToTime(time - 2 * t);
+                xday4 = timestampToTime(time - 3 * t);
+                xday5 = timestampToTime(time - 4 * t);
+                xday6 = timestampToTime(time - 5 * t);
+                xday7 = timestampToTime(time - 6 * t);
+                //获取value
+                var delivery1 = data[time][1];
+                var local1 = data[time][2];
+                var delivery2 = data[time - t][1];
+                var local2 = data[time - t][2];
+                var delivery3 = data[time - 2 * t][1];
+                var local3 = data[time - 2 * t][2];
+                var delivery4 = data[time - 3 * t][1];
+                var local4 = data[time - 3 * t][2];
+                var delivery5 = data[time - 4 * t][1];
+                var local5 = data[time - 4 * t][2];
+                var delivery6 = data[time - 5 * t][1];
+                var local6 = data[time - 5 * t][2];
+                var delivery7 = data[time - 6 * t][1];
+                var local7 = data[time - 6 * t][2];
+                // 指定图表的配置项和数据
+                option3 = {
+                    title: {
+                        text: '食堂消费总份数'
+                    },
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'shadow'
+                        }
+                    },
+                    legend: {
+                        data: ['食堂就餐', '外卖份数']
+                    },
+                    grid: {
+                        left: '3%',
+                        right: '4%',
+                        bottom: '3%',
+                        containLabel: true
+                    },
+                    xAxis: {
+                        type: 'value',
+                        boundaryGap: [0, 0.01]
+                    },
+                    yAxis: {
+                        type: 'category',
+                        data: [xday1, xday2, xday3, xday4, xday5, xday6, xday7]
+                    },
+                    series: [
+                        {
+                            name: '食堂就餐',
+                            type: 'bar',
+                            data: [delivery1, delivery2, delivery3, delivery4, delivery5, delivery6, delivery7]
+                        },
+                        {
+                            name: '外卖份数',
+                            type: 'bar',
+                            data: [local1, local2, local3, local4, local5, local6, local7]
+                        }
+                    ]
+                }
+                ;
+                myChart3.hideLoading();
+                // 使用刚指定的配置项和数据显示图表。
+                myChart3.setOption(option3);
+            } //end func
+        }); //end ajax
+
+        //第四个表
+        myChart4.showLoading();
+        $.ajax({
+            type: "GET",
+            async: true,
+            url: "http://127.0.0.1:8080/getCanteenSex",
+            data: {date: time},
+            success: function (data) {
+                var t = 86400;
+                //计算横坐标
+                xday1 = timestampToTime(time);
+                xday2 = timestampToTime(time - t);
+                xday3 = timestampToTime(time - 2 * t);
+                xday4 = timestampToTime(time - 3 * t);
+                xday5 = timestampToTime(time - 4 * t);
+                xday6 = timestampToTime(time - 5 * t);
+                xday7 = timestampToTime(time - 6 * t);
+                //获取value
+                var delivery1 = data[time][1];
+                var local1 = data[time][2];
+                var delivery2 = data[time - t][1];
+                var local2 = data[time - t][2];
+                var delivery3 = data[time - 2 * t][1];
+                var local3 = data[time - 2 * t][2];
+                var delivery4 = data[time - 3 * t][1];
+                var local4 = data[time - 3 * t][2];
+                var delivery5 = data[time - 4 * t][1];
+                var local5 = data[time - 4 * t][2];
+                var delivery6 = data[time - 5 * t][1];
+                var local6 = data[time - 5 * t][2];
+                var delivery7 = data[time - 6 * t][1];
+                var local7 = data[time - 6 * t][2];
+                // 指定图表的配置项和数据
+                option4 = {
+                    title: {
+                        text: '食堂消费总份数'
+                    },
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'shadow'
+                        }
+                    },
+                    legend: {
+                        data: ['男生消费份数', '女生消费份数']
+                    },
+                    grid: {
+                        left: '3%',
+                        right: '4%',
+                        bottom: '3%',
+                        containLabel: true
+                    },
+                    xAxis: {
+                        type: 'value',
+                        boundaryGap: [0, 0.01]
+                    },
+                    yAxis: {
+                        type: 'category',
+                        data: [xday1, xday2, xday3, xday4, xday5, xday6, xday7]
+                    },
+                    series: [
+                        {
+                            name: '男生消费份数',
+                            type: 'bar',
+                            data: [delivery1, delivery2, delivery3, delivery4, delivery5, delivery6, delivery7],
+                            itemStyle: {
+                                normal: {
+                                    //这里是重点
+                                    color: function (params) {
+                                        //注意，如果颜色太少的话，后面颜色不会自动循环，最好多定义几个颜色
+                                        var colorList = ['#fa5a5a', '#fa5a5a', '#fa5a5a', '#fa5a5a', '#fa5a5a', '#fa5a5a', '#fa5a5a'];
+                                        return colorList[params.dataIndex]
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            name: '女生消费份数',
+                            type: 'bar',
+                            data: [local1, local2, local3, local4, local5, local6, local7],
+                            itemStyle: {
+                                normal: {
+                                    //这里是重点
+                                    color: function (params) {
+                                        //注意，如果颜色太少的话，后面颜色不会自动循环，最好多定义几个颜色
+                                        var colorList = ['#6698cb', '#6698cb', '#6698cb', '#6698cb', '#6698cb', '#6698cb', '#6698cb'];
+                                        return colorList[params.dataIndex]
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                };
+                myChart4.hideLoading();
+                // 使用刚指定的配置项和数据显示图表。
+                myChart4.setOption(option4);
+            } //end func
+        }); //end ajax
+
     }//end func
 
     //时间戳转换为2020-9-23

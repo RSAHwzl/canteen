@@ -1,23 +1,146 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="7c63cc67-ff58-4675-b795-c095732db4a8" name="Default Changelist" comment="服务器部署代码">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lin/canteen/interceptor/LoginIntercepter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_lettuce_lettuce_core_5_3_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_51_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_51_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_51_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_51_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_51_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_51_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_reactor_core_3_3_9_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_redis_2_3_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_3_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_2_3_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_2_3_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_2_8_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_5_2_8_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lin/canteen/config/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lin/canteen/controller/CanteenAllController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lin/canteen/controller/SubCanteenController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lin/canteen/service/RedisService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lin/canteen/util/JsonUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lin/canteen/util/MD5Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_1_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_1_8.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_11_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_11_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_11_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_11_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_11_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_11_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_11_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_11_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_11_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_11_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_11_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_11_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_4_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_4_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_3_4_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_3_4_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_activation_jakarta_activation_api_1_2_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_activation_jakarta_activation_api_1_2_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_annotation_jakarta_annotation_api_1_3_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_annotation_jakarta_annotation_api_1_3_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_xml_bind_jakarta_xml_bind_api_2_3_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_xml_bind_jakarta_xml_bind_api_2_3_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_21.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_21.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_10_14.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_10_14.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_10_14.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_10_14.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_accessors_smart_1_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_accessors_smart_1_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_2_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_2_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_13_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_13_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_13_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_13_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_37.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_37.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_37.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_37.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_16_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_16_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_attoparser_attoparser_2_0_5_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_attoparser_attoparser_2_0_5_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jakarta_el_3_0_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jakarta_el_3_0_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_2_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_2_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_6_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_6_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_6_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_6_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_6_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_6_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_6_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_6_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_6_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_6_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_6_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_6_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_vintage_junit_vintage_engine_5_6_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_vintage_junit_vintage_engine_5_6_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_3_3_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_3_3_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_junit_jupiter_3_3_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_junit_jupiter_3_3_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_5_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_5_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_2_0_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_2_0_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_2_1_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_2_1_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_2_1_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_2_1_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_5_0_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_5_0_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_5_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_5_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_30.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_30.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_30.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_30.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_3_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_3_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_3_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_3_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_3_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_3_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_3_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_3_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_3_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_3_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_3_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_3_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_3_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_3_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_2_3_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_2_3_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_3_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_3_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_3_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_3_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_3_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_3_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_3_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_3_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_2_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_2_8_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_2_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_2_8_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_2_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_2_8_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_2_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_2_8_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_2_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_2_8_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_2_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_2_8_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_2_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_2_8_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_2_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_2_8_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_2_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_2_8_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_2_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_2_8_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_2_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_2_8_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_extras_thymeleaf_extras_java8time_3_0_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_extras_thymeleaf_extras_java8time_3_0_4_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_0_11_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_0_11_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring5_3_0_11_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring5_3_0_11_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_unbescape_unbescape_1_1_6_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_unbescape_unbescape_1_1_6_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_7_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_7_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_26.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_26.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lin/canteen/bean/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lin/canteen/bean/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/canteen.iml" beforeDir="false" afterPath="$PROJECT_DIR$/canteen.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lin/canteen/CanteenApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lin/canteen/CanteenApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lin/canteen/bean/Canteen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lin/canteen/bean/Canteen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lin/canteen/bean/Consume.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lin/canteen/bean/Consume.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lin/canteen/config/WebMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lin/canteen/config/WebMvcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lin/canteen/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lin/canteen/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lin/canteen/controller/PageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lin/canteen/controller/PageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lin/canteen/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lin/canteen/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lin/canteen/controller/CanteenController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lin/canteen/controller/FoodController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lin/canteen/controller/WindowsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lin/canteen/mapper/ConsumeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lin/canteen/mapper/ConsumeMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lin/canteen/service/CanteenAllService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lin/canteen/service/CanteenAllService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lin/canteen/service/CanteenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lin/canteen/service/CanteenService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lin/canteen/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lin/canteen/service/CategoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lin/canteen/service/FoodService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lin/canteen/service/FoodService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lin/canteen/service/CanteenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lin/canteen/service/SubCanteenService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lin/canteen/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lin/canteen/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lin/canteen/util/CodeUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lin/canteen/util/CodeUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/xadmin.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/xadmin.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/est-cf.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/est-cf.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/est-cs.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/est-cs.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/est-dbf.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/est-dbf.html" afterDir="false" />
@@ -31,7 +154,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/hfz-mz.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/hfz-mz.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/hfz-tf.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/hfz-tf.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/hfz-xc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/hfz-xc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/echarts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/ljxj-bz.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/ljxj-bz.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/ljxj-dzb.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/ljxj-dzb.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/ljxj-mx.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/ljxj-mx.html" afterDir="false" />
@@ -39,7 +162,6 @@
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/ljxj-wzm.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/ljxj-wzm.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/ljxj-xc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/ljxj-xc.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/ljxj-xg.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/ljxj-xg.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/sq-gg.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/sq-gg.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/sq-hsjx.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/sq-hsjx.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/sq-lj.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/sq-lj.html" afterDir="false" />
@@ -57,11 +179,22 @@
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/yst-mx.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/yst-mx.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/yst-xxl.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/yst-xxl.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/yst-yyf.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/yst-yyf.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lin/canteen/CanteenApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lin/canteen/CanteenApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lin/canteen/bean/Canteen.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lin/canteen/bean/Canteen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lin/canteen/bean/Consume.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lin/canteen/bean/Consume.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lin/canteen/bean/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lin/canteen/bean/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lin/canteen/controller/CanteenController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lin/canteen/controller/FoodController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lin/canteen/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lin/canteen/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lin/canteen/controller/PageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lin/canteen/controller/PageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lin/canteen/mapper/ConsumeMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lin/canteen/mapper/ConsumeMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lin/canteen/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lin/canteen/mapper/UserMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lin/canteen/service/CanteenAllService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lin/canteen/service/CanteenAllService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lin/canteen/service/CanteenService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lin/canteen/service/CanteenService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lin/canteen/service/CategoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lin/canteen/service/CategoryService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lin/canteen/service/FoodService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lin/canteen/service/FoodService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/xadmin.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/xadmin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lin/canteen/service/CanteenService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lin/canteen/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lin/canteen/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lin/canteen/util/CodeUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lin/canteen/util/CodeUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/est-cf.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/est-cf.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/est-cs.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/est-cs.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/est-dbf.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/est-dbf.html" afterDir="false" />
@@ -75,7 +208,7 @@
       <change beforePath="$PROJECT_DIR$/target/classes/static/hfz-mz.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/hfz-mz.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/hfz-tf.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/hfz-tf.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/hfz-xc.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/hfz-xc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/echarts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/ljxj-bz.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/ljxj-bz.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/ljxj-dzb.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/ljxj-dzb.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/ljxj-mx.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/ljxj-mx.html" afterDir="false" />
@@ -83,7 +216,6 @@
       <change beforePath="$PROJECT_DIR$/target/classes/static/ljxj-wzm.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/ljxj-wzm.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/ljxj-xc.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/ljxj-xc.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/ljxj-xg.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/ljxj-xg.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/sq-gg.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/sq-gg.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/sq-hsjx.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/sq-hsjx.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/sq-lj.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/sq-lj.html" afterDir="false" />
@@ -102,9 +234,6 @@
       <change beforePath="$PROJECT_DIR$/target/classes/static/yst-xxl.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/yst-xxl.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/yst-yyf.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/yst-yyf.html" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <ignored path="$PROJECT_DIR$/target/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -116,128 +245,6 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/canteen$CanteenApplication.ic" NAME="CanteenApplication Coverage Results" MODIFIED="1600848977520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-893933049">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="23" />
-          <entry key="project.open.time.0" value="2" />
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.2" value="1" />
-          <entry key="project.open.time.21" value="1" />
-          <entry key="project.open.time.24" value="1" />
-          <entry key="project.open.time.29" value="2" />
-          <entry key="project.open.time.31" value="1" />
-          <entry key="project.open.time.32" value="2" />
-          <entry key="project.open.time.33" value="4" />
-          <entry key="project.open.time.34" value="4" />
-          <entry key="project.open.time.35" value="1" />
-          <entry key="project.open.time.36" value="1" />
-          <entry key="project.open.time.4" value="1" />
-          <entry key="project.open.time.42" value="1" />
-          <entry key="project.open.time.46" value="1" />
-          <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="25" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="CLASS" value="14" />
-          <entry key="CSS" value="13" />
-          <entry key="HTML" value="332" />
-          <entry key="IDEA_MODULE" value="1" />
-          <entry key="Image" value="7" />
-          <entry key="JAVA" value="201" />
-          <entry key="JavaScript" value="10" />
-          <entry key="PLAIN_TEXT" value="5" />
-          <entry key="Properties" value="4" />
-          <entry key="XML" value="16" />
-          <entry key="YAML" value="23" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="CSS" value="116" />
-          <entry key="HTML" value="1566" />
-          <entry key="JAVA" value="9233" />
-          <entry key="JavaScript" value="4" />
-          <entry key="PLAIN_TEXT" value="112" />
-          <entry key="XML" value="7" />
-          <entry key="YAML" value="92" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="132" column="54" lean-forward="true" selection-start-line="132" selection-start-column="54" selection-end-line="132" selection-end-column="54" />
-              <folding>
-                <element signature="n#style#0;n#p#0;n#div#1;n#form#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/index.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/canteen/bean/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-              <folding>
-                <element signature="e#977#978#0" expanded="true" />
-                <element signature="e#1004#1005#0" expanded="true" />
-                <element signature="e#1041#1042#0" expanded="true" />
-                <element signature="e#1073#1074#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/canteen/mapper/UserMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="14" column="30" lean-forward="true" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/canteen/service/UserService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/canteen/controller/LoginController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="45" selection-start-line="45" selection-end-line="45" />
-              <folding>
-                <element signature="e#1506#1507#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -246,291 +253,44 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>8080</find>
-      <find>:8080</find>
-      <find>localhost</find>
-      <find>搜索</find>
-      <find>js/jquery-1.11.0.js</find>
-      <find>http://code.jquery.com/jquery-1.11.0.min.js</find>
-      <find>http://47.98.145.221/</find>
-      <find>getCanteenAll</find>
-      <find>localhost:8080/</find>
-      <find>127.0.0.1:8080/</find>
-      <find>left</find>
-      <find>left_open</find>
-      <find>layui-show</find>
-      <find>async:false,</find>
-      <find>async:</find>
-      <find>async</find>
-      <find>async:true</find>
-      <find>.stream</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>47.98.145.221</replace>
-      <replace>http://code.jquery.com/jquery-1.11.0.min.js</replace>
-      <replace>js/jquery-1.11.0.js</replace>
-      <replace>localhost:8080/</replace>
-      <replace>127.0.0.1:8080/</replace>
-      <replace>http://127.0.0.1:8080/</replace>
-      <replace>async:true,</replace>
-      <replace />
-      <replace>async:false</replace>
-      <replace>.parallelStream</replace>
-    </replaceStrings>
-  </component>
   <component name="Git.Settings">
     <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/main/resources/static/est-jxb.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/est-nrf.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/est-zc.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/hfz-gf.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/hfz-gg.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/hfz-tf.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/ljxj-bz.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/ljxj-dzb.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/ljxj-mx.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/ljxj-tf.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/ljxj-wzm.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/ljxj-xc.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/ljxj-xg.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/sq-gg.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/sq-hsjx.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/sq-lj.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/sq-td.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/sq-yf.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/yst-bmy.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/yst-dpj.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/yst-mg.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/yst-mx.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/yst-xxl.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/yst-yyf.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lin/canteen/config/CORSConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lin/canteen/config/WebConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lin/canteen/config/EmbedTomcatConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/css/xadmin.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/est-cf.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/flzl.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/hfz-xc.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/st-est.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/st-hfz.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/st-ljxj.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/st-sq.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/st-yst.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/hfz-mz.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/est-cs.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lin/canteen/service/CanteenAllService.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/welcome.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lin/canteen/interceptor/loginIntercepter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lin/canteen/controller/PageController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lin/canteen/util/CodeUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lin/canteen/bean/User.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/css/index.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/login.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lin/canteen/config/WebMvcConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lin/canteen/controller/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lin/canteen/service/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lin/canteen/mapper/UserMapper.java" />
-      </list>
-    </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="localRepository" value="D:\maven\本地仓库\repository-IDEA" />
-        <option name="mavenHome" value="D:/maven/maven/apache-maven-3.3.9" />
+        <option name="mavenHome" value="E:\JetBrains\IntelliJ IDEA 2020.2.3\plugins\maven\lib\maven3" />
         <option name="userSettingsFile" value="D:\maven\maven\apache-maven-3.3.9\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
   </component>
-  <component name="MavenProjectNavigator">
-    <treeState>
-      <expand>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="canteen" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="canteen" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
-        </path>
-      </expand>
-      <select />
-    </treeState>
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="10" />
-    <option name="y" value="30" />
-    <option name="width" value="1744" />
-    <option name="height" value="989" />
-  </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State />
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>Angular</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
-  </component>
+  <component name="ProjectId" id="1rYBi7TYX7MJRMAMl0wYnVbU51H" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="canteen" type="b2602c69:ProjectViewProjectNode" />
-              <item name="canteen" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="canteen" type="b2602c69:ProjectViewProjectNode" />
-              <item name="canteen" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="canteen" type="b2602c69:ProjectViewProjectNode" />
-              <item name="canteen" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="canteen" type="b2602c69:ProjectViewProjectNode" />
-              <item name="canteen" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="canteen" type="b2602c69:ProjectViewProjectNode" />
-              <item name="canteen" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="canteen" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="canteen" type="b2602c69:ProjectViewProjectNode" />
-              <item name="canteen" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="canteen" type="462c0819:PsiDirectoryNode" />
-              <item name="bean" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="canteen" type="b2602c69:ProjectViewProjectNode" />
-              <item name="canteen" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="canteen" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="canteen" type="b2602c69:ProjectViewProjectNode" />
-              <item name="canteen" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="canteen" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="canteen" type="b2602c69:ProjectViewProjectNode" />
-              <item name="canteen" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="canteen" type="462c0819:PsiDirectoryNode" />
-              <item name="interceptor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="canteen" type="b2602c69:ProjectViewProjectNode" />
-              <item name="canteen" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="canteen" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="canteen" type="b2602c69:ProjectViewProjectNode" />
-              <item name="canteen" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="canteen" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="canteen" type="b2602c69:ProjectViewProjectNode" />
-              <item name="canteen" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="canteen" type="b2602c69:ProjectViewProjectNode" />
-              <item name="canteen" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-    </panes>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\IDEA编程\canteen\src\main\resources\static" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\IDEA编程\canteen\src\main\resources\static\js" />
       <recent name="D:\IDEA编程\canteen\src\main\resources\static\images" />
@@ -538,33 +298,11 @@
       <recent name="D:\IDEA编程\canteen\src\main\resources\templates" />
       <recent name="D:\IDEA编程\canteen\src\main\java\com\lin\canteen\config" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IDEA编程\canteen\src\main\resources\static" />
+    </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Spring Boot.CanteenApplication">
-    <configuration name="CodeUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.lin.canteen.util.CodeUtil" />
-      <module name="canteen" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.lin.canteen.util.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="CanteenApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="canteen" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.lin.canteen.CanteenApplication" />
@@ -572,16 +310,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Spring Boot.CanteenApplication" />
-      <item itemvalue="Application.CodeUtil" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.CodeUtil" />
-      </list>
-    </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -617,6 +347,13 @@
       <workItem from="1614044275626" duration="8000" />
       <workItem from="1617586389730" duration="10214000" />
       <workItem from="1617598286450" duration="22497000" />
+      <workItem from="1619143269625" duration="15687000" />
+      <workItem from="1619312495809" duration="1377000" />
+      <workItem from="1619313937417" duration="23918000" />
+      <workItem from="1619399408738" duration="15012000" />
+      <workItem from="1619485733687" duration="12452000" />
+      <workItem from="1619572388830" duration="20477000" />
+      <workItem from="1619658055625" duration="21860000" />
     </task>
     <task id="LOCAL-00001" summary="ajax设置">
       <created>1617591940700</created>
@@ -642,406 +379,138 @@
     <option name="localTasksCounter" value="4" />
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="166179000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="8" y="24" width="1395" height="791" extended-state="0" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22288705" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Web" order="2" side_tool="true" />
-      <window_info id="Designer" order="3" />
-      <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3287037" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.387538" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39665654" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Spring" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3287037" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32882884" />
-      <window_info anchor="bottom" id="Java Enterprise" order="12" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.32724506" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24978974" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" weight="0.3291874" />
-      <window_info anchor="right" id="Coverage" order="6" side_tool="true" weight="0.3291874" />
-    </layout>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ajax设置" />
     <MESSAGE value="服务器部署代码" />
     <option name="LAST_COMMIT_MESSAGE" value="服务器部署代码" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/lin/canteen/controller/LoginController.java</url>
-          <line>45</line>
-          <properties />
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="WindowStateProjectService">
+    <state x="453" y="166" width="1092" height="816" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1619429964561">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="453" y="166" width="1092" height="816" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1619429964561" />
+    <state x="767" y="179" key="#com.intellij.ide.util.MemberChooser" timestamp="1619595711748">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="767" y="179" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1619595711748" />
+    <state x="573" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1619316250124">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="573" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1619316250124" />
+    <state width="444" height="618" key="DebuggerActiveHint" timestamp="1619595502503">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="444" height="618" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1619595502503" />
+    <state x="168" y="88" key="DiffContextDialog" timestamp="1619159184631">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="168" y="88" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1619159184631" />
+    <state width="1572" height="248" key="GridCell.Tab.0.bottom" timestamp="1619689336043">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1572" height="248" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1619689336043" />
+    <state width="1572" height="248" key="GridCell.Tab.0.center" timestamp="1619689336043">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1572" height="248" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1619689336043" />
+    <state width="1572" height="248" key="GridCell.Tab.0.left" timestamp="1619689336043">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1572" height="248" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1619689336043" />
+    <state width="1572" height="248" key="GridCell.Tab.0.right" timestamp="1619689336043">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1572" height="248" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1619689336043" />
+    <state width="1572" height="248" key="GridCell.Tab.1.bottom" timestamp="1619689336044">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1572" height="248" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1619689336044" />
+    <state width="1572" height="248" key="GridCell.Tab.1.center" timestamp="1619689336043">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1572" height="248" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1619689336043" />
+    <state width="1572" height="248" key="GridCell.Tab.1.left" timestamp="1619689336043">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1572" height="248" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1619689336043" />
+    <state width="1572" height="248" key="GridCell.Tab.1.right" timestamp="1619689336043">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1572" height="248" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1619689336043" />
+    <state width="1572" height="263" key="GridCell.Tab.2.bottom" timestamp="1619667533008">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1572" height="263" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1619667533008" />
+    <state width="1572" height="263" key="GridCell.Tab.2.center" timestamp="1619667533007">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1572" height="263" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1619667533007" />
+    <state width="1572" height="263" key="GridCell.Tab.2.left" timestamp="1619667533007">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1572" height="263" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1619667533007" />
+    <state width="1572" height="263" key="GridCell.Tab.2.right" timestamp="1619667533008">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1572" height="263" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1619667533008" />
+    <state x="518" y="261" key="IDE.errors.dialog" timestamp="1619146564928">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="518" y="261" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1619146564928" />
+    <state x="511" y="163" key="Maven.ArtifactSearchDialog" timestamp="1619426904880">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="511" y="163" key="Maven.ArtifactSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1619426904880" />
+    <state x="740" y="140" key="RollbackChangesDialog" timestamp="1619159198446">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="140" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1619159198446" />
+    <state x="439" y="171" key="SettingsEditor" timestamp="1619158822270">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="439" y="171" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1619158822270" />
+    <state width="810" height="473" key="XDebugger.FullValuePopup" timestamp="1619513350201">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="810" height="473" key="XDebugger.FullValuePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1619513350201" />
+    <state x="589" y="213" key="extract.method.dialog" timestamp="1619603536470">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="589" y="213" key="extract.method.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1619603536470" />
+    <state x="984" y="66" width="610" height="939" key="find.popup" timestamp="1619329825701">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="984" y="66" width="610" height="939" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1619329825701" />
+    <state x="592" y="236" key="run.anything.popup" timestamp="1619313327182">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="592" y="236" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1619313327182" />
+    <state x="601" y="260" width="672" height="678" key="search.everywhere.popup" timestamp="1619659906658">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="601" y="260" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1619659906658" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/ljxj-mx.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1650" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/ljxj-tf.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1575" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/ljxj-wzm.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1500" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/ljxj-xc.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1425" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/ljxj-xg.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1425" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/sq-gg.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1425" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/sq-hsjx.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1575" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/sq-lj.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1275" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/sq-td.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1500" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/sq-yf.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="74" column="40" selection-start-line="74" selection-start-column="40" selection-end-line="74" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/st-hfz.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="71" column="23" selection-start-line="71" selection-start-column="23" selection-end-line="71" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/st-ljxj.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="71" column="23" selection-start-line="71" selection-start-column="23" selection-end-line="71" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/st-sq.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="196" column="23" selection-start-line="196" selection-start-column="23" selection-end-line="196" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/st-yst.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="205" column="23" selection-start-line="205" selection-start-column="23" selection-end-line="205" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/yst-dpj.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1425" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/yst-mg.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1650" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/yst-mx.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1575" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/yst-xxl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1500" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/yst-yyf.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-200">
-          <caret line="42" column="14" lean-forward="true" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/hfz-mz.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-931">
-          <caret line="72" column="24" lean-forward="true" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/canteen/controller/FoodController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="24" column="39" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/canteen/service/FoodService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="21" column="52" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/flzl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1625">
-          <caret line="65" column="24" lean-forward="true" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="24" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/st-est.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3750">
-          <caret line="207" column="15" lean-forward="true" selection-start-line="207" selection-start-column="15" selection-end-line="207" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/ljxj-dzb.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1725" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/yst-bmy.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1150">
-          <caret line="50" column="55" lean-forward="true" selection-start-line="50" selection-start-column="55" selection-end-line="50" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/est-cs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1670">
-          <caret line="173" column="29" lean-forward="true" selection-start-line="173" selection-start-column="29" selection-end-line="173" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/canteen/controller/CanteenController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="20" column="40" lean-forward="true" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
-          <folding>
-            <element signature="e#613#614#0" expanded="true" />
-            <element signature="e#679#680#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/canteen/mapper/ConsumeMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/canteen/service/CanteenAllService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/echarts.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/est-cf.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/echarts.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/9.0.37/tomcat-embed-core-9.0.37.jar!/javax/servlet/ServletRequestWrapper.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="137" column="55" lean-forward="true" selection-start-line="137" selection-start-column="55" selection-end-line="137" selection-end-column="55" />
-          <folding>
-            <element signature="e#3630#3631#0" expanded="true" />
-            <element signature="e#3692#3693#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/9.0.37/tomcat-embed-core-9.0.37.jar!/javax/servlet/ServletRequest.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="63" column="22" selection-start-line="63" selection-start-column="22" selection-end-line="63" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1950" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/welcome.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="61" column="30" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/canteen/util/CodeUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-242">
-          <caret line="102" column="18" selection-start-line="102" selection-start-column="18" selection-end-line="102" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/images/code.gif">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/images/bg.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/images/3.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/canteen/interceptor/LoginIntercepter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="48" lean-forward="true" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/canteen/controller/PageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/canteen/config/WebMvcConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="22" column="55" lean-forward="true" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.2.8.RELEASE/spring-aop-5.2.8.RELEASE.jar!/org/springframework/aop/framework/JdkDynamicAopProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="84" selection-start-line="84" selection-end-line="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/canteen/bean/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-          <folding>
-            <element signature="e#977#978#0" expanded="true" />
-            <element signature="e#1004#1005#0" expanded="true" />
-            <element signature="e#1041#1042#0" expanded="true" />
-            <element signature="e#1073#1074#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="132" column="54" lean-forward="true" selection-start-line="132" selection-start-column="54" selection-end-line="132" selection-end-column="54" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#div#1;n#form#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/canteen/mapper/UserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="14" column="30" lean-forward="true" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/canteen/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
-          <folding>
-            <element signature="e#1506#1507#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/canteen/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/gitTest$CanteenApplication.ic" NAME="CanteenApplication Coverage Results" MODIFIED="1619606217970" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="masterDetails">
     <states>

@@ -1,6 +1,5 @@
 package com.lin.canteen.config;
 
-import com.lin.canteen.interceptor.LoginIntercepter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -20,9 +19,9 @@ public class WebMvcConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new LoginIntercepter())
-                .addPathPatterns("/**")
-                .excludePathPatterns("/login", "/toLogin", "/getImg", "/regist")
-                .excludePathPatterns("/**/js/**", "/**/css/**", "/**/fonts/**", "/**/images/**", "/**/lib.layui/**");
+//        registry.addInterceptor(new LoginIntercepter())
+//                .addPathPatterns("/**")
+//                .excludePathPatterns("/login", "/toLogin", "/getImg", "/regist")
+//                .excludePathPatterns("/**/js/**", "/**/css/**", "/**/fonts/**", "/**/images/**", "/**/lib.layui/**");
     }
 }
