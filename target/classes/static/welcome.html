@@ -300,7 +300,7 @@
                 // 指定图表的配置项和数据
                 option3 = {
                     title: {
-                        text: '食堂消费总份数'
+                        text: '食堂消费份数对比'
                     },
                     tooltip: {
                         trigger: 'axis',
@@ -380,7 +380,7 @@
                 // 指定图表的配置项和数据
                 option4 = {
                     title: {
-                        text: '食堂消费总份数'
+                        text: '男女消费份数对比'
                     },
                     tooltip: {
                         trigger: 'axis',
@@ -409,6 +409,7 @@
                         {
                             name: '男生消费份数',
                             type: 'bar',
+                            color: '#fa5a5a',
                             data: [delivery1, delivery2, delivery3, delivery4, delivery5, delivery6, delivery7],
                             itemStyle: {
                                 normal: {
@@ -424,6 +425,7 @@
                         {
                             name: '女生消费份数',
                             type: 'bar',
+                            color: '#6698cb',
                             data: [local1, local2, local3, local4, local5, local6, local7],
                             itemStyle: {
                                 normal: {

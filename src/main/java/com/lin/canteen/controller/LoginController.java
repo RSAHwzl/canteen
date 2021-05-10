@@ -22,7 +22,6 @@ public class LoginController {
     //生成验证码
     @GetMapping("/getImg")
     public Object getCaptchaImg(HttpServletRequest request, HttpServletResponse response, HttpSession session) {
-
         Map result = new HashMap();
         try {
             response.setContentType("image/png");
@@ -48,9 +47,9 @@ public class LoginController {
 
     @GetMapping("/toLogin")
     public int login(String UserName, String PassWord, int Auth, String Code, HttpServletRequest request) {
-        String code = String.valueOf(request.getSession().getAttribute("JCCODE")).toLowerCase();
+        String codeCheck = String.valueOf(request.getSession().getAttribute("JCCODE")).toLowerCase();
         int result = userService.selectUser(UserName, PassWord, Auth);
-        if (result != 0 && code.equals(Code)) {
+        if (result != 0 ) { //&& codeCheck.equals(Code)
             request.getSession().setAttribute("account", UserName);
             return 1;
         }

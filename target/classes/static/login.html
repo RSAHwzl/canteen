@@ -117,7 +117,6 @@
         var day = $('#test').val();
         var address = $('#address').val();
         var auth = $('input[name="auth"]:checked').val();
-        console.log(auth);
         //转换为时间戳
         time = new Date(day) / 1000;
 
@@ -185,8 +184,13 @@
                         alert("密码或验证码错误！！！");
                         $('#loginForm')[0].reset();
                     } else {
-                        alert("登录成功！");
-                        window.location.href = "http://127.0.0.1:8080/index";
+                        if (auth == 999){
+                            alert("登录成功！");
+                            window.location.href = "http://127.0.0.1:8080/index";
+                        }else{
+                            alert("登录成功！");
+                            window.location.href = "http://127.0.0.1:8080/student";
+                        }
                     }
                 }//end func(data)
             });//end ajax

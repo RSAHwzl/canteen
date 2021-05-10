@@ -8,7 +8,12 @@ public class PageController {
 
     @GetMapping("/index")
     public String toIndex() {
-            return "index";
+        return "index";
+    }
+
+    @GetMapping("/student")
+    public String toStudent() {
+        return "student";
     }
 
     @GetMapping("/login")

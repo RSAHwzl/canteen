@@ -13,9 +13,17 @@ public interface ConsumeMapper {
     @Select("select * from consume a left join menu b on a.mId=b.mId where a.cDate=#{date}")
     ArrayList<Canteen> findCanteenByDate(int date);
 
-    //查询所有食堂某天消费情况
+    //查询所有食堂多天消费情况
     @Select("select * from consume a left join menu b on a.mId=b.mId where a.cDate in ${dates}")
     ArrayList<Consume> findCanteenAllByDate(String dates);
+
+    //查询所有食堂某天消费情况
+    @Select("select * from consume a left join menu b on a.mId=b.mId where a.cDate=#{date}")
+    ArrayList<Consume> findStudentCanteenAllByDate(int date);
+
+    //查询所有食堂某天消费前15名
+    @Select("select * from consume a left join menu b on a.mId=b.mId where a.cDate=#{date} order by a.cNum desc limit #{rank}")
+    ArrayList<Consume> findStudentCanteenRankByDate(int date, int rank);
 
     //查询各食堂各窗口某天消费情况
     @Results(value = {
@@ -27,6 +35,12 @@ public interface ConsumeMapper {
     @Select("select cNum,b.mName,b.mPrice,b.mCanteen,b.mWindow from consume a " +
             "left join menu b on a.mId=b.mId where a.cDate=#{date}")
     ArrayList<Window> findCanteenByWindow(int date);
+
+    //查询某食堂某天消费前15名
+    @Select("select * from consume a left join menu b on a.mId=b.mId " +
+            "where a.cDate=#{date} and b.mCanteen=#{canteen} " +
+            "order by a.cNum desc limit #{rank}")
+    ArrayList<Consume> findStudentCanteenWindowRankByDate(int date, int canteen, int window, int rank);
 
     //查询各窗口销量前十数据
     @Results(value = {

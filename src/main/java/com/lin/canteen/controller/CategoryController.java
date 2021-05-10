@@ -13,7 +13,17 @@ public class CategoryController {
     CategoryService categoryService;
 
     @GetMapping("/getCategory")
-    public HashMap<Integer, HashMap<String,Object>> getCategory(int date){
-        return  categoryService.getCategoryByDate(date);
+    public HashMap<Integer, HashMap<String, Object>> getCategory(int date) {
+        return categoryService.getCategoryByDate(date);
+    }
+
+    @GetMapping("/getCategoryDelivery")
+    public HashMap<Integer, HashMap<String, Object>> getCategoryDelivery(int date) {
+        return categoryService.getCategoryDeliveryByDate(date);
+    }
+
+    @GetMapping("/getCategoryMale")
+    public HashMap<Integer, HashMap<String, Object>> getCategoryMale(int date) {
+        return categoryService.getCategoryMaleByDate(date);
     }
 }
